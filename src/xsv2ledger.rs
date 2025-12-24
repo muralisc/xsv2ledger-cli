@@ -78,7 +78,6 @@ impl Xsv2Ledger {
             }
 
             self.settings.xsv_to_ledger_record.print(record);
-
         }
     }
 }

@@ -3,8 +3,6 @@ use config::{Config, ConfigError, File};
 use serde::Deserialize;
 use std::collections::HashMap;
 
-
-
 // Date State Payee
 //      ; Note
 //      Posting (Account Amount @ CostAmount)
@@ -26,7 +24,7 @@ pub struct XsvToLedgerRecord {
 
 impl XsvToLedgerRecord {
     pub fn print(&self, record: csv::StringRecord) {
-        let tab_as_spaces= "        ".to_string();
+        let tab_as_spaces = "        ".to_string();
         println!(
             "{} {} \"{}\"",
             self.date.get_string(&record),
@@ -35,6 +33,22 @@ impl XsvToLedgerRecord {
                 Some(state) => state.get_string(&record),
             },
             self.payee.get_string(&record)
+        );
+        if let Some(notes) = &self.notes {
+            if let Some(note_str) = notes.get_string(&record) {
+                println!("{}; {}", tab_as_spaces, note_str);
+            }
+        }
+
+        println!(
+            "{}{}",
+            tab_as_spaces,
+            self.target_posting.get_string(&record)
+        );
+        println!(
+            "{}{}",
+            tab_as_spaces,
+            self.source_posting.get_string(&record)
         );
         println!();
     }
