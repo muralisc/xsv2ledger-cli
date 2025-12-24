@@ -1,5 +1,5 @@
-use crate::settings::{Settings};
 use crate::ledger_entry::LedgerEntry;
+use crate::settings::Settings;
 
 use tracing::{debug, info, warn};
 
@@ -31,9 +31,8 @@ impl Xsv2Ledger {
             debug!("Record : {:?}!", record);
             debug!("Length of Row/Record {}", record.len());
 
-        let le = LedgerEntry::new(self.settings.clone(), record);
-        le.print();
+            let le = LedgerEntry::new(self.settings.clone(), record);
+            le.print();
         }
-
     }
 }

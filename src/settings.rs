@@ -5,12 +5,14 @@ use std::collections::HashMap;
 #[derive(Debug, Deserialize, Clone)]
 pub struct XsvToEntry {
     // Columns which help identify this entry
-    pub hint_columns: Vec<usize>
+    pub hint_columns: Vec<usize>,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Date {
-    pub xsv_to_entry: XsvToEntry,
+    pub column: usize,
+    pub date_format: String,
+    pub date_regex: String,
 }
 
 #[derive(Debug, Deserialize, Clone)]
@@ -67,19 +69,31 @@ pub struct XsvToLedgerRecord {
     pub state: State,
     pub payee: Payee,
     pub notes: Option<Note>,
-    // From manual: 
-    // It is a general convention within Ledger that the “top” postings 
-    // in a transaction contain the target accounts, 
+    // From manual:
+    // It is a general convention within Ledger that the “top” postings
+    // in a transaction contain the target accounts,
     // while the final posting contains the source account.
     pub target_posting: Posting,
     pub source_posting: Posting,
 }
 
 #[derive(Debug, Deserialize, Clone)]
+#[serde(tag = "type", content = "content")]
+pub enum ExcludeCondition {
+    ColumnContainsValue {
+        column: usize,
+        value: String,
+        operation: String,
+    },
+    RecordLen(usize),
+}
+
+#[derive(Debug, Deserialize, Clone)]
 pub struct Settings {
-    pub xsv_to_ledger_record: XsvToLedgerRecord,
     pub delimiter: Option<String>,
     pub has_headers: bool,
+    pub xsv_to_ledger_record: XsvToLedgerRecord,
+    pub exclude_conditions: Vec<ExcludeCondition>,
 }
 
 impl Settings {

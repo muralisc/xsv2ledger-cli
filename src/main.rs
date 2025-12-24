@@ -6,11 +6,10 @@ mod settings;
 use settings::Settings;
 
 use clap::Parser;
+use std::fs::File;
 use tracing::info;
 use tracing_core::Level;
 use tracing_subscriber;
-use std::fs::File;
-
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
@@ -23,7 +22,6 @@ struct Args {
     #[arg(short, long)]
     transactions_csv: String,
 }
-
 
 fn main() {
     let debug_file_appender = File::create("xv2ledger.debug.log").unwrap();
