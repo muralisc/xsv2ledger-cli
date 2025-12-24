@@ -23,7 +23,6 @@ impl LedgerEntry {
     }
 
     fn get_date(&self) -> NaiveDate {
-        // let date_str = self.record[self.settings.xsv_to_ledger_record.date.xsv_to_entry.hint_columns].trim();
         let date_str = self.record[self.settings.xsv_to_ledger_record.date.column].trim();
         debug!(
             "Processing date string: \"{}\" with regex {}",
@@ -49,7 +48,12 @@ impl LedgerEntry {
     }
 
     fn get_payee(&self) -> String {
-        return "".to_string();
+        let payee_string = self.settings.xsv_to_ledger_record.payee.xsv_to_entry.hint_columns
+            .iter()
+            .map(|i| self.record[*i].to_string())
+            .collect::<Vec<String>>()
+            .join(" | ");
+        return payee_string;
     }
 
     fn get_target_posting(&self) -> String {
@@ -60,8 +64,8 @@ impl LedgerEntry {
         return "".to_string();
     }
 
-    fn get_comment(&self) -> String {
-        return "".to_string();
+    fn get_notes(&self) -> Option<String> {
+        return Option::None;
     }
 
     pub fn print(&self) {
@@ -74,7 +78,9 @@ impl LedgerEntry {
             self.get_payee()
         );
 
-        println!("{}; {}", tab_as_spaces, self.get_comment());
+        if let Some(notes) = self.get_notes() {
+        println!("{}; {}", tab_as_spaces, notes);
+        }
         println!("{}{}", tab_as_spaces, self.get_target_posting(),);
         println!("{}{}", tab_as_spaces, self.get_source_posting());
         println!();

@@ -66,7 +66,7 @@ pub struct Posting {
 #[derive(Debug, Deserialize, Clone)]
 pub struct XsvToLedgerRecord {
     pub date: Date,
-    pub state: State,
+    pub state: Option<State>,
     pub payee: Payee,
     pub notes: Option<Note>,
     // From manual:

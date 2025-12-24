@@ -1,5 +1,5 @@
 use crate::ledger_entry::LedgerEntry;
-use crate::settings::Settings;
+use crate::settings::{ExcludeCondition, Settings};
 
 use tracing::{debug, info, warn};
 
