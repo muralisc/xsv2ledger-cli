@@ -49,7 +49,7 @@ impl Xsv2Ledger {
                     );
                 }
             }
-            if should_exclude == true  {
+            if should_exclude == true {
                 break;
             }
         }

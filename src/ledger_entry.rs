@@ -48,7 +48,12 @@ impl LedgerEntry {
     }
 
     fn get_payee(&self) -> String {
-        let payee_string = self.settings.xsv_to_ledger_record.payee.xsv_to_entry.hint_columns
+        let payee_string = self
+            .settings
+            .xsv_to_ledger_record
+            .payee
+            .xsv_to_entry
+            .hint_columns
             .iter()
             .map(|i| self.record[*i].to_string())
             .collect::<Vec<String>>()
@@ -79,7 +84,7 @@ impl LedgerEntry {
         );
 
         if let Some(notes) = self.get_notes() {
-        println!("{}; {}", tab_as_spaces, notes);
+            println!("{}; {}", tab_as_spaces, notes);
         }
         println!("{}{}", tab_as_spaces, self.get_target_posting(),);
         println!("{}{}", tab_as_spaces, self.get_source_posting());
