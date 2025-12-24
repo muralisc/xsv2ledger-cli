@@ -1,62 +1,9 @@
+use crate::posting::{Date, Note, Payee, Posting, State, XsvToEntry};
 use config::{Config, ConfigError, File};
 use serde::Deserialize;
 use std::collections::HashMap;
 
-#[derive(Debug, Deserialize, Clone)]
-pub struct XsvToEntry {
-    // Columns which help identify this entry
-    pub hint_columns: Vec<usize>,
-}
 
-#[derive(Debug, Deserialize, Clone)]
-pub struct Date {
-    pub column: usize,
-    pub date_format: String,
-    pub date_regex: String,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct State {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Payee {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Note {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Account {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Quantity {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Commodity {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Amount {
-    pub quantity: Quantity,
-    pub commodity: Commodity,
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Posting {
-    pub account: Account,
-    pub amount: Option<Amount>,
-    pub cost_amount: Option<Amount>,
-}
 
 // Date State Payee
 //      ; Note
@@ -75,6 +22,22 @@ pub struct XsvToLedgerRecord {
     // while the final posting contains the source account.
     pub target_posting: Posting,
     pub source_posting: Posting,
+}
+
+impl XsvToLedgerRecord {
+    pub fn print(&self, record: csv::StringRecord) {
+        let tab_as_spaces= "        ".to_string();
+        println!(
+            "{} {} \"{}\"",
+            self.date.get_string(&record),
+            match &self.state {
+                None => "*".to_string(),
+                Some(state) => state.get_string(&record),
+            },
+            self.payee.get_string(&record)
+        );
+        println!();
+    }
 }
 
 #[derive(Debug, Deserialize, Clone)]

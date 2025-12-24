@@ -77,8 +77,8 @@ impl Xsv2Ledger {
                 continue;
             }
 
-            let le = LedgerEntry::new(self.settings.clone(), record);
-            le.print();
+            self.settings.xsv_to_ledger_record.print(record);
+
         }
     }
 }

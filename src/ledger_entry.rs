@@ -1,9 +1,11 @@
+use crate::posting::Posting;
 use crate::settings::Settings;
 use chrono::NaiveDate;
 use regex::RegexBuilder;
 use tracing::{debug, info, warn};
 
 pub struct LedgerEntry {
+    tab_as_spaces: String,
     settings: Settings,
     record: csv::StringRecord,
     // date: NaiveDate,
@@ -17,35 +19,12 @@ pub struct LedgerEntry {
 impl LedgerEntry {
     pub fn new(settings: Settings, record: csv::StringRecord) -> Self {
         LedgerEntry {
+            tab_as_spaces: "        ".to_string(),
             settings: settings,
             record: record,
         }
     }
 
-    fn get_date(&self) -> NaiveDate {
-        let date_str = self.record[self.settings.xsv_to_ledger_record.date.column].trim();
-        debug!(
-            "Processing date string: \"{}\" with regex {}",
-            date_str, self.settings.xsv_to_ledger_record.date.date_regex
-        );
-        let re = RegexBuilder::new(&format!(
-            r"{}",
-            self.settings.xsv_to_ledger_record.date.date_regex
-        ))
-        .build()
-        .unwrap();
-        let cleaned_date = re.find(date_str).unwrap();
-        debug!("Date matched with regex: {}", cleaned_date.as_str());
-        return NaiveDate::parse_from_str(
-            cleaned_date.as_str(),
-            &self.settings.xsv_to_ledger_record.date.date_format,
-        )
-        .unwrap();
-    }
-
-    fn get_state(&self) -> String {
-        return "*".to_string();
-    }
 
     fn get_payee(&self) -> String {
         let payee_string = self
@@ -61,8 +40,12 @@ impl LedgerEntry {
         return payee_string;
     }
 
-    fn get_target_posting(&self) -> String {
+    fn get_posting(&self, posting: &Posting) -> String {
         return "".to_string();
+    }
+
+    fn get_target_posting(&self) -> String {
+        return self.get_posting(&self.settings.xsv_to_ledger_record.target_posting)
     }
 
     fn get_source_posting(&self) -> String {
@@ -70,24 +53,36 @@ impl LedgerEntry {
     }
 
     fn get_notes(&self) -> Option<String> {
-        return Option::None;
+        if let Some(notes) = &self.settings.xsv_to_ledger_record.notes {
+            let note_string = notes
+                .xsv_to_entry
+                .hint_columns
+                .iter()
+                .map(|i| self.record[*i].to_string())
+                .collect::<Vec<String>>()
+                .join(" | ");
+            if note_string.len() == 0 {
+                return None;
+            }
+            return Some(note_string);
+        }
+        return None;
     }
 
     pub fn print(&self) {
-        let tab_as_spaces = "        ";
 
-        println!(
-            "{} {} \"{}\"",
-            self.get_date(),
-            self.get_state(),
-            self.get_payee()
-        );
+        // println!(
+        //     "{} {} \"{}\"",
+        //     self.get_date(),
+        //     self.get_state(),
+        //     self.get_payee()
+        // );
 
         if let Some(notes) = self.get_notes() {
-            println!("{}; {}", tab_as_spaces, notes);
+            println!("{}; {}", self.tab_as_spaces, notes);
         }
-        println!("{}{}", tab_as_spaces, self.get_target_posting(),);
-        println!("{}{}", tab_as_spaces, self.get_source_posting());
+        println!("{}{}", self.tab_as_spaces, self.get_target_posting(),);
+        println!("{}{}", self.tab_as_spaces, self.get_source_posting());
         println!();
     }
 }
