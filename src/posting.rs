@@ -176,7 +176,7 @@ impl CostAmount {
         if self.exclude.exclude(&record) {
             return "".to_string();
         }
-        return format!("@ {}", self.amount.get_string(&record));
+        return format!(" @ {}", self.amount.get_string(&record));
     }
 }
 
@@ -190,7 +190,7 @@ impl Price {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
         let amount_str = self.amount.get_string(&record);
         if let Some(cost_amount) = &self.cost_amount {
-            return format!("{} {}", amount_str, cost_amount.get_string(&record));
+            return format!("{}{}", amount_str, cost_amount.get_string(&record));
         }
         return amount_str;
     }
