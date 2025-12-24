@@ -1,5 +1,6 @@
-use crate::ledger_entry::LedgerEntry;
-use crate::settings::{ExcludeCondition, Settings};
+use crate::settings::{Settings};
+use crate::exclude_condition::Exclude;
+use crate::exclude_condition::ConditionTypes;
 
 use tracing::{debug, info, warn};
 
@@ -18,10 +19,10 @@ impl Xsv2Ledger {
 
     fn should_exclude(&self, record: &csv::StringRecord) -> bool {
         let mut should_exclude: bool = false;
-        for exclude_condition in &self.settings.exclude_conditions {
+        for exclude_condition in &self.settings.exclude.conditions {
             debug!("Checking Excluding condition: {:?}", exclude_condition);
             match exclude_condition {
-                ExcludeCondition::ColumnContainsValue {
+                ConditionTypes::ColumnContainsValue {
                     column,
                     value,
                     operation,
@@ -37,7 +38,7 @@ impl Xsv2Ledger {
                         }
                     }
                 }
-                ExcludeCondition::RecordLen(record_len) => {
+                ConditionTypes::RecordLen(record_len) => {
                     if *record_len == record.len() {
                         should_exclude = true
                     }

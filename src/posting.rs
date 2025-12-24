@@ -1,4 +1,5 @@
 use chrono::NaiveDate;
+use crate::exclude_condition::Exclude;
 use regex::RegexBuilder;
 use serde::Deserialize;
 use tracing::{debug, info, warn};
@@ -132,7 +133,7 @@ pub struct Quantity {
 
 impl Quantity {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        return "".to_string();
+        return self.xsv_to_entry.get_string(&record);
     }
 }
 
@@ -143,9 +144,10 @@ pub struct Commodity {
 
 impl Commodity {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        return "".to_string();
+        return self.xsv_to_entry.get_string(&record);
     }
 }
+
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Amount {
@@ -155,19 +157,57 @@ pub struct Amount {
 
 impl Amount {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        return "".to_string();
+        return format!(
+            "{} {}",
+            self.quantity.get_string(&record),
+            self.commodity.get_string(&record)
+        );
+    }
+}
+
+#[derive(Debug, Deserialize, Clone)]
+pub struct CostAmount {
+    pub amount: Amount,
+    pub exclude: Exclude
+}
+
+impl CostAmount {
+    pub fn get_string(&self, record: &csv::StringRecord) -> String {
+        if self.exclude.exclude(&record) {
+            return "".to_string();
+        }
+        return format!("@ {}", self.amount.get_string(&record));
+    }
+}
+
+#[derive(Debug, Deserialize, Clone)]
+pub struct Price {
+    pub amount: Amount,
+    pub cost_amount: Option<CostAmount>,
+}
+
+impl Price {
+    pub fn get_string(&self, record: &csv::StringRecord) -> String {
+        let amount_str = self.amount.get_string(&record);
+        if let Some(cost_amount) = &self.cost_amount {
+            return format!("{} {}", amount_str, cost_amount.get_string(&record));
+        }
+        return amount_str;
     }
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Posting {
     pub account: Account,
-    pub amount: Option<Amount>,
-    pub cost_amount: Option<Amount>,
+    pub price: Option<Price>,
 }
 
 impl Posting {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        return self.account.get_string(&record);
+        let account_str = self.account.get_string(&record);
+        if let Some(price) = &self.price {
+            return format!("{}        {}", account_str, price.get_string(&record));
+        }
+        return account_str;
     }
 }

@@ -1,4 +1,5 @@
 use crate::posting::{Date, Note, Payee, Posting, State, XsvToEntry};
+use crate::exclude_condition::Exclude;
 use config::{Config, ConfigError, File};
 use serde::Deserialize;
 use std::collections::HashMap;
@@ -54,23 +55,13 @@ impl XsvToLedgerRecord {
     }
 }
 
-#[derive(Debug, Deserialize, Clone)]
-#[serde(tag = "type", content = "content")]
-pub enum ExcludeCondition {
-    ColumnContainsValue {
-        column: usize,
-        value: String,
-        operation: String,
-    },
-    RecordLen(usize),
-}
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Settings {
     pub delimiter: Option<String>,
     pub has_headers: bool,
     pub xsv_to_ledger_record: XsvToLedgerRecord,
-    pub exclude_conditions: Vec<ExcludeCondition>,
+    pub exclude: Exclude,
 }
 
 impl Settings {

@@ -1,5 +1,6 @@
 mod ledger_entry;
 mod posting;
+mod exclude_condition;
 mod xsv2ledger;
 use xsv2ledger::Xsv2Ledger;
 
