@@ -1,8 +1,6 @@
-use crate::settings::{Settings};
-use crate::exclude_condition::Exclude;
-use crate::exclude_condition::ConditionTypes;
+use crate::settings::Settings;
 
-use tracing::{debug, info, warn};
+use tracing::{debug, info};
 
 pub struct Xsv2Ledger {
     settings: Settings,

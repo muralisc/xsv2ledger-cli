@@ -1,8 +1,8 @@
-use chrono::NaiveDate;
 use crate::exclude_condition::Exclude;
+use chrono::NaiveDate;
 use regex::RegexBuilder;
 use serde::Deserialize;
-use tracing::{debug, info, warn};
+use tracing::debug;
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Mapping {
@@ -75,11 +75,9 @@ impl Date {
 }
 
 #[derive(Debug, Deserialize, Clone)]
-pub struct State {
-    pub xsv_to_entry: XsvToEntry,
-}
+pub struct State {}
 impl State {
-    pub fn get_string(&self, record: &csv::StringRecord) -> String {
+    pub fn get_string(&self, _record: &csv::StringRecord) -> String {
         return "*".to_string();
     }
 }
@@ -148,7 +146,6 @@ impl Commodity {
     }
 }
 
-
 #[derive(Debug, Deserialize, Clone)]
 pub struct Amount {
     pub quantity: Quantity,
@@ -168,7 +165,7 @@ impl Amount {
 #[derive(Debug, Deserialize, Clone)]
 pub struct CostAmount {
     pub amount: Amount,
-    pub exclude: Exclude
+    pub exclude: Exclude,
 }
 
 impl CostAmount {

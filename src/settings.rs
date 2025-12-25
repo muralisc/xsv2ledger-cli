@@ -1,5 +1,5 @@
-use crate::posting::{Date, Note, Payee, Posting, State, XsvToEntry};
 use crate::exclude_condition::Exclude;
+use crate::posting::{Date, Note, Payee, Posting, State};
 use config::{Config, ConfigError, File};
 use serde::Deserialize;
 use std::collections::HashMap;
@@ -54,7 +54,6 @@ impl XsvToLedgerRecord {
         println!();
     }
 }
-
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Settings {
