@@ -1,0 +1,70 @@
+; vim:ft=ledger
+; vim:set tw=200
+2005-02-24 * "AMERICAN EXPRESS DD"
+        Assets:Bank:HSBC:Savings        -1,297.73 GBP
+        Liabilities:CreditCard
+
+2005-02-22 * "FASL PRIM CLIENT B OBDCO1111115625 OBP"
+        Assets:Bank:HSBC:Savings        -20,000.00 GBP
+        Assets:WireTransfer:HSBC_FIDELITY
+
+2005-02-19 * "HOGWARTS UK LIMITE CR"
+        Assets:Bank:HSBC:Savings        6,429.50 GBP
+        HOGWARTS UK LIMITE CR
+
+2005-02-16 * "GROSS INTEREST TO 15DEC2025 FOR ACCOUNT 111111 11111152 INT"
+        Assets:Bank:HSBC:Savings        66.58 GBP
+        Income:HSBC:Interest
+
+2005-02-01 * "MURALI SURESH TRANSFER FROM HSBC SO"
+        Assets:Bank:HSBC:Savings        -2,500.00 GBP
+        Assets:WireTransfer:MONZO_HSBC
+
+2005-01-28 * "HOGWARTS UK LIMITE CR"
+        Assets:Bank:HSBC:Savings        8,622.56 GBP
+        HOGWARTS UK LIMITE CR
+
+2005-01-24 * "AMERICAN EXPRESS DD"
+        Assets:Bank:HSBC:Savings        -1,873.44 GBP
+        Liabilities:CreditCard
+
+2005-01-16 * "GROSS INTEREST TO 15NOV2025 FOR ACCOUNT 111111 11111152 INT"
+        Assets:Bank:HSBC:Savings        68.79 GBP
+        Income:HSBC:Interest
+
+2005-11-30 * "HOGWARTS UK LIMITE CR"
+        Assets:Bank:HSBC:Savings        6,260.19 GBP
+        HOGWARTS UK LIMITE CR
+
+2005-11-30 * "MURALI SURESH TRANSFER FROM HSBC SO"
+        Assets:Bank:HSBC:Savings        -2,500.00 GBP
+        Assets:WireTransfer:MONZO_HSBC
+
+2005-11-22 * "AMERICAN EXPRESS DD"
+        Assets:Bank:HSBC:Savings        -2,626.50 GBP
+        Liabilities:CreditCard
+
+2005-11-16 * "GROSS INTEREST TO 15OCT2025 FOR ACCOUNT 111111 11111152 INT"
+        Assets:Bank:HSBC:Savings        66.58 GBP
+        Income:HSBC:Interest
+
+2005-07-30 * "MURALI SURESH TRANSFER FROM HSBC SO"
+        Assets:Bank:HSBC:Savings        -2,500.00 GBP
+        Assets:WireTransfer:MONZO_HSBC
+
+2005-07-30 * "HOGWARTS UK LIMITE CR"
+        Assets:Bank:HSBC:Savings        6,206.00 GBP
+        HOGWARTS UK LIMITE CR
+
+2005-07-24 * "AMERICAN EXPRESS DD"
+        Assets:Bank:HSBC:Savings        -1,822.40 GBP
+        Liabilities:CreditCard
+
+2005-07-16 * "GROSS INTEREST TO 15SEP2025 FOR ACCOUNT 111111 11111152 INT"
+        Assets:Bank:HSBC:Savings        68.79 GBP
+        Income:HSBC:Interest
+
+2005-07-01 * "MURALI SURESH TRANSFER FROM HSBC SO"
+        Assets:Bank:HSBC:Savings        -2,500.00 GBP
+        Assets:WireTransfer:MONZO_HSBC
+

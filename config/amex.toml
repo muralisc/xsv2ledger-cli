@@ -70,10 +70,6 @@ key = """\
     """
 value = "Expenses:Posessions"
 
-[[second_account_hint_mapping.income]]
-key = "PAYMENT RECEIVED"
-value = "Liabilities:CreditCard"
-
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key = "MEMBERSHIP FEE|INTEREST CHARGE"
 value = "Expenses:Amex:Interest"
@@ -104,3 +100,7 @@ hint_columns = [2]
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key= ".*"
 value= "Assets:Bank:Amex"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "PAYMENT RECEIVED"
+value = "Liabilities:CreditCard"

@@ -1,0 +1,108 @@
+# HSBC TOML
+has_headers = false
+delimiter = "comma"
+
+[exclude]
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 1
+value = "TRANSFER - FROM HSBC"
+operation = "contains"
+
+[xsv_to_ledger_record.date]
+date_format="%d/%m/%Y"
+date_regex='\d{2}/\d{2}/\d{4}'
+column = 0
+
+[xsv_to_ledger_record.payee]
+[xsv_to_ledger_record.payee.xsv_to_entry]
+hint_columns = [1]
+
+[xsv_to_ledger_record.target_posting]
+[xsv_to_ledger_record.target_posting.account]
+[xsv_to_ledger_record.target_posting.account.xsv_to_entry]
+hint_columns = [1]
+
+
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "Assets:Bank:HSBC:Savings"
+
+[xsv_to_ledger_record.target_posting.price.amount]
+[xsv_to_ledger_record.target_posting.price.amount.quantity]
+[xsv_to_ledger_record.target_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [2]
+
+[xsv_to_ledger_record.target_posting.price.amount.commodity]
+[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [2]
+
+[[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "GBP"
+
+[xsv_to_ledger_record.source_posting]
+[xsv_to_ledger_record.source_posting.account]
+[xsv_to_ledger_record.source_posting.account.xsv_to_entry]
+hint_columns = [1]
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "TESCO"
+value = "Expenses:Groceries"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "AMERICAN EXP"
+value = "Liabilities:CreditCard"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "AMZNMktplace|AMAZON.CO.UK|Amazon Prime"
+value = "Expenses:Utilities"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "FIDELITY.CO.UK TADWORTH VIS"
+value = "Assets:Investments:Fidelity:ISA:Cash"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "STRIPE DD|STRIPE FIRST PAYMENT DD"
+value = "Expenses:Housing"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "HMRC SELF AS"
+value = "Expenses:Taxes"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "DEPOSIT BOND "
+value = "Assets:Bank:HSBC:Fixed"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "FACEBOOK UK"
+value = "Income:Facebook:Salary"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+# transfers FROM Monzo
+key = "M Sureshchandran CR|M Sureshchandran Murali Sureshchand CR"
+value = "Assets:WireTransfer:MONZO_HSBC"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Remitly U.K."
+value = "Assets:WireTransfer:REMITLY_HSBC"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+# transfers TO Monzo
+key = "MURALI SURESH TRANSFER FROM HSBC SO"
+value = "Assets:WireTransfer:MONZO_HSBC"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Remitly UK|M Sureshchandran pis"
+value = "Assets:WireTransfer:REMITLY_HSBC"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "GROSS INTEREST TO "
+value = "Income:HSBC:Interest"
+
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "FASL PRIM CLIENT B"
+value = "Assets:WireTransfer:HSBC_FIDELITY"

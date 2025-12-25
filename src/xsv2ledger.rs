@@ -27,7 +27,7 @@ impl Xsv2Ledger {
             .from_path(&self.transactions_file_path)
         {
             Ok(file) => file,
-            Err(error) => panic!("Problem opening the file: {:?}", error),
+            Err(error) => panic!("Problem opening the file: {:?} error: {:?}", &self.transactions_file_path, error),
         };
         for record in reader.records() {
             let record = record.unwrap();
