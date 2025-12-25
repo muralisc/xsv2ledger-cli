@@ -38,16 +38,19 @@ value = "Expenses:Entertainment"
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key = """\
     NISA LOCAL|OCADO|TESCO|MARKS (&|AND)|M&S|BEST FOODS|SAINSBURY|GRAINMILL|WAITROSE|KERALATASTE|ATHLETIC GREENS|THE HAMPSTEAD BUTCHER|\
-    NAYAXAU|SP LAKSHMI STORES UK|CO-OP\
+    NAYAXAU|SP LAKSHMI STORES UK|CO-OP|1164 Cherry Tree Walk\
     """
 value = "Expenses:Groceries"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "IRCTC|BOOKING.COM|VFS Global Services Mumbai|TFL TRAVEL|TRAVEL UP|Airways|OYSTERCARD|UBER|LONDON WATERBUS|TFL GOODWILL"
+key = """\
+    IRCTC|BOOKING.COM|VFS Global Services Mumbai|TFL TRAVEL|TRAVEL UP|\
+    LUL TICKET MACHINE|\
+    Airways|OYSTERCARD|UBER|LONDON WATERBUS|TFL GOODWILL"""
 value = "Expenses:Transport"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "BOOTS|BARBER|OURARING|THRIVA|VINTAGE SCISSORS|ROYAL FREE HOSPITAL"
+key = "BOOTS|BARBER|OURARING|THRIVA|VINTAGE SCISSORS|ROYAL FREE HOSPITAL|MEDELA UK"
 value = "Expenses:Health"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
@@ -59,14 +62,19 @@ key = "WIKIPEDIA GIFT"
 value = "Expenses:Donations"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "WWW.LOCRATING.COM|WH SMITH RETAIL|NORD|GENTLE HAIR DYE|AMAZON|AMZN|PRIMARK|Apple|Justpark|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree"
+key = """WWW.LOCRATING.COM|WH SMITH RETAIL|NORD|GENTLE HAIR DYE|AMAZON|\
+    DISNEY PLUS|\
+    AMZN|PRIMARK|Apple|Justpark|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree"""
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key = """\
-    NEXT NEXTDIRECTORY|J BARBOUR AND SONS|SP GLOVERALL            EARLS BARTON|CHARLES TYRWHITT SHIRTS|BRAVISSIMO LTD|SP ALLBIRDS|\
+    NEXT NEXTDIRECTORY|J BARBOUR AND SONS|SP GLOVERALL            EARLS BARTON|\
+    CHARLES TYRWHITT SHIRTS|BRAVISSIMO LTD|SP ALLBIRDS|\
+    SNAPPY SNAPS|SP BABY CENTRE|ALIEXPRESS|JOHN LEWIS DIRECT|\
     JOJO  NEXT TP|HOBBS LIMITED|ADIDAS|CINEWORLD|\
-    SHEIN DISTRIBUTION|IKEA|WATERSTONE|MECHBOARDS|PILLOWS|NEW BALANCE|BELLROY|RYOHIN KEIKAKU|UNIQLO EUROPE\
+    SHEIN DISTRIBUTION|IKEA|WATERSTONE|MECHBOARDS|PILLOWS|NEW BALANCE|BELLROY|RYOHIN KEIKAKU|UNIQLO EUROPE|\
+    SP NEARLY NEW CASHME|SP CLAIR DE LUNE|SP CDL-GROUP LLC\
     """
 value = "Expenses:Posessions"
 
@@ -77,6 +85,10 @@ value = "Expenses:Amex:Interest"
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key= "POST OFFICE"
 value= "Assets:Bank:PostOfficeTravelMoneyCard"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "PAYMENT RECEIVED"
+value = "Liabilities:CreditCard"
 
 
 [xsv_to_ledger_record.target_posting.price.amount]
@@ -101,6 +113,3 @@ hint_columns = [2]
 key= ".*"
 value= "Assets:Bank:Amex"
 
-[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "PAYMENT RECEIVED"
-value = "Liabilities:CreditCard"

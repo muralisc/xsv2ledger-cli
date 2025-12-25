@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Usage:
+#       sort-ledger config/hsbc.toml hsbc-2025-nov.csv
+
+echo "; vim:ft=ledger"
+echo ""
+
+CONFIG=$1
+TXN_FD=$2
+cd ~/src/xsv2ledger-cli; cargo run -- --config $CONFIG --transactions-csv $TXN_FD | \ledger -f - print --sort 'date' --permissive
