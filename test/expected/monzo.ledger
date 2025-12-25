@@ -1,0 +1,66 @@
+; vim:ft=ledger
+; vim:set tw=200
+2022-10-01 * "Stripe"
+        Assets:Bank:Monzo        -2100.00 GBP
+        Expenses:Housing
+
+2022-10-01 * "Octopus Energy"
+        Assets:Bank:Monzo        -62.84 GBP
+        Expenses:Utilities
+
+2022-10-02 * "Amazon Web Services"
+        Assets:Bank:Monzo        -3.44 GBP
+        Expenses:Utilities
+
+2022-10-03 * "H.a. Mcparland Ltd"
+        Assets:Bank:Monzo        -4.95 GBP
+        Expenses:Health
+
+2022-10-06 * "Barnet Council"
+        Assets:Bank:Monzo        -248.00 GBP
+        Expenses:Housing
+
+2022-10-08 * "Oyster Auto Top-up"
+        Assets:Bank:Monzo        -10.00 GBP
+        Expenses:Transport
+
+2022-10-09 * "Oyster Auto Top-up"
+        Assets:Bank:Monzo        -10.00 GBP
+        Expenses:Transport
+
+2022-10-10 * "Oyster Auto Top-up"
+        Assets:Bank:Monzo        -10.00 GBP
+        Expenses:Transport
+
+2022-10-11 * "Oyster Auto Top-up"
+        Assets:Bank:Monzo        -10.00 GBP
+        Expenses:Transport
+
+2022-10-14 * "Vintage Scisso"
+        Assets:Bank:Monzo        -16.00 GBP
+        Expenses:Utilities
+
+2022-10-14 * "ATM"
+        Assets:Bank:Monzo        -200.00 GBP
+        Expenses:Utilities
+
+2022-10-14 * "Metropolitan Infrastructure"
+        Assets:Bank:Monzo        -50.37 GBP
+        Expenses:Utilities
+
+2022-10-17 * "Oyster Auto Top-up"
+        Assets:Bank:Monzo        -10.00 GBP
+        Expenses:Transport
+
+2022-10-22 * "Oyster Auto Top-up"
+        Assets:Bank:Monzo        -10.00 GBP
+        Expenses:Transport
+
+2022-10-27 * "Hyperoptic"
+        Assets:Bank:Monzo        -29.00 GBP
+        Expenses:Utilities
+
+2022-10-30 * "SURESXXXXXXX"
+        Assets:Bank:Monzo        2500.00 GBP
+        Faster payment | SURESXXXXXXX
+

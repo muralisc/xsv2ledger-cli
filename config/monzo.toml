@@ -1,0 +1,111 @@
+# Example TOML
+has_headers = true
+delimiter = "comma"
+
+
+[exclude]
+[[exclude.conditions]]
+type = "RecordLen"
+content = 1
+
+[xsv_to_ledger_record.date]
+date_format="%d/%m/%Y"
+date_regex='\d{2}/\d{2}/\d{4}'
+column = 1
+
+[xsv_to_ledger_record.payee]
+[xsv_to_ledger_record.payee.xsv_to_entry]
+hint_columns = [4]      # Transaction type, Investments
+
+[xsv_to_ledger_record.target_posting]
+[xsv_to_ledger_record.target_posting.account]
+[xsv_to_ledger_record.target_posting.account.xsv_to_entry]
+hint_columns = [4]
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "Assets:Bank:Monzo"
+
+[xsv_to_ledger_record.target_posting.price.amount]
+[xsv_to_ledger_record.target_posting.price.amount.quantity]
+[xsv_to_ledger_record.target_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [7]
+
+[xsv_to_ledger_record.target_posting.price.amount.commodity]
+[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [8]
+
+[xsv_to_ledger_record.source_posting]
+[xsv_to_ledger_record.source_posting.account]
+[xsv_to_ledger_record.source_posting.account.xsv_to_entry]
+hint_columns = [3,4]
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Stitch Fix|Kprepublic"
+value = "Expenses:Posessions"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Uber$|Postofficetravel|Transport for London|Railcard|Vehicle Licensing Agency|Safe Driving For Life|Travel Up"
+value = "Expenses:Transport"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "UK Visas & Immigration|Oyster|AA Driving School|Pramod Khatti"
+value = "Expenses:Transport"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Digital Ocean|Hyperoptic|Amazon|Metropolitan Infrastru|Virgin Media|Lebara|Scottish Power|Royal Mail|Spotify|Better UK"
+value = "Expenses:Utilities"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Moogoo EU|JustPark|Vintage Scisso|Metropolitan|Manorama Products|Octopus Energy|Card Payment.*ATM"
+value = "Expenses:Utilities"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "AMERICAN EXP"
+value = "Liabilities:CreditCard"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "L&Q|Barnet|Locrating|Direct Debit.*Stripe"
+value = "Expenses:Housing"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Hoppers|deliveroo|Netflix|ODEON|Burger King|Crown Cafe Bar|Costa Coffee|Uber Eats|Thrillophilia|OnlyFans"
+value = "Expenses:Entertainment"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Champ De Mars|Airbnb|Sonyliv"
+value = "Expenses:Entertainment"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Optometrist|Christian Art|Royal Free London|H.a. Mcparland Ltd"
+value = "Expenses:Health"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key= "Sree Sobha Dharmarajan|Better"
+value =  "Expenses:Allowance"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Colindale Local|Kingsbury Fruit|Sainsbury|Sp Lakshmi Stores"
+value = "Expenses:Groceries"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "AMERICAN EXP"
+value = "Liabilities:CreditCard"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+# for HSBC
+key= "Murali Sureshchandran"
+value= "Assets:WireTransfer:MONZO_HSBC"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+# for Fidelity
+key= "Fidelity"
+value= "Assets:WireTransfer:MONZO_FIDELITY"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key= "Sree Sobha Dharmarajan"
+value =  "Income:LivingShare"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key= "SURESHCHANDR"
+value= "Assets:WireTransfer:MONZO_HSBC"

@@ -1,0 +1,17 @@
+Transaction ID,Date,Time,Type,Name,Emoji,Category,Amount,Currency,Local amount,Local currency,Notes and #tags,Address,Receipt,Description,Category split,Money Out,Money In
+tx_0000AXXXXXXXXXXXXXXXXX,01/10/2022,04:12:22,Direct Debit,Stripe,,General,-2100.00,GBP,-2100.00,GBP,XXXXXXHC-YSI,,,XXXXXXHC-YSI,,-2100.00,
+tx_0000AXXXXXXXXXXXXXXXXX,01/10/2022,04:32:22,Direct Debit,Octopus Energy,,Bills,-62.84,GBP,-62.84,GBP,XXXXXXN,,,XXXXXXN,,-62.84,
+tx_0000AXXXXXXXXXXXXXXXXX,02/10/2022,07:12:24,Card payment,Amazon Web Services,☁️,General,-3.44,GBP,-4.62,USD,,,,AWS EMEA               aws.amazon.co LUX,,-3.44,
+tx_0000AXXXXXXXXXXXXXXXXX,03/10/2022,12:32:26,Card payment,H.a. Mcparland Ltd,💊,General,-4.95,GBP,-4.95,GBP,,2 Heath Parade,,H.A. MCPARLAND LTD     LONDON        GBR,,-4.95,
+tx_0000AXXXXXXXXXXXXXXXXX,06/10/2022,03:02:27,Direct Debit,Barnet Council,,Bills,-248.00,GBP,-248.00,GBP,01      35854733,,,01      35854733,,-248.00,
+tx_0000AXXXXXXXXXXXXXXXXX,08/10/2022,03:12:29,Card payment,Oyster Auto Top-up,🚅,Transport,-10.00,GBP,-10.00,GBP,,9TH FL ALBANY HOUSE,,OYSTER AUTO-TOP UP     LONDON        GBR,,-10.00,
+tx_0000AXXXXXXXXXXXXXXXXX,09/10/2022,03:22:23,Card payment,Oyster Auto Top-up,🚅,Transport,-10.00,GBP,-10.00,GBP,,9TH FL ALBANY HOUSE,,OYSTER AUTO-TOP UP     LONDON        GBR,,-10.00,
+tx_0000AXXXXXXXXXXXXXXXXX,10/10/2022,03:22:23,Card payment,Oyster Auto Top-up,🚅,Transport,-10.00,GBP,-10.00,GBP,,9TH FL ALBANY HOUSE,,OYSTER AUTO-TOP UP     LONDON        GBR,,-10.00,
+tx_0000AXXXXXXXXXXXXXXXXX,11/10/2022,03:32:26,Card payment,Oyster Auto Top-up,🚅,Transport,-10.00,GBP,-10.00,GBP,,9TH FL ALBANY HOUSE,,OYSTER AUTO-TOP UP     LONDON        GBR,,-10.00,
+tx_0000AXXXXXXXXXXXXXXXXX,14/10/2022,15:32:29,Card payment,Vintage Scisso,✂️,General,-16.00,GBP,-16.00,GBP,,10 Central Circus,,SumUp  *Vintage Scisso Hendon        GBR,,-16.00,
+tx_0000AXXXXXXXXXXXXXXXXX,14/10/2022,15:32:29,Card payment,ATM,💵,Finances,-200.00,GBP,-200.00,GBP,,Tesco Hnd Vv A Exp,,ROYAL BK OF SCOTLAND   HENDON        GBR,,-200.00,
+tx_0000AXXXXXXXXXXXXXXXXX,14/10/2022,18:52:21,Card payment,Metropolitan Infrastructure,🏗,Bills,-50.37,GBP,-50.37,GBP,,2 Ellen Street,,Metropolitan Infrastru Cardiff       GBR,,-50.37,
+tx_0000AXXXXXXXXXXXXXXXXX,17/10/2022,03:32:26,Card payment,Oyster Auto Top-up,🚅,Transport,-10.00,GBP,-10.00,GBP,,9TH FL ALBANY HOUSE,,OYSTER AUTO-TOP UP     LONDON        GBR,,-10.00,
+tx_0000AXXXXXXXXXXXXXXXXX,22/10/2022,03:12:24,Card payment,Oyster Auto Top-up,🚅,Transport,-10.00,GBP,-10.00,GBP,,9TH FL ALBANY HOUSE,,OYSTER AUTO-TOP UP     LONDON        GBR,,-10.00,
+tx_0000AXXXXXXXXXXXXXXXXX,27/10/2022,03:02:24,Direct Debit,Hyperoptic,,Bills,-29.00,GBP,-29.00,GBP,XXXXXXXXXXXXXXX,,,XXXXXXXXXXXXXXX,,-29.00,
+tx_0000AXXXXXXXXXXXXXXXXX,30/10/2022,02:12:22,Faster payment,SURESXXXXXXX,,Income,2500.00,GBP,2500.00,GBP,TRANSFER FROM HSBC,,,TRANSFER FROM HSBC,,,2500.00
