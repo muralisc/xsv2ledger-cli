@@ -1,0 +1,38 @@
+; vim:ft=ledger
+; vim:set tw=200
+1999-01-06 * "Transfer To Cash Management Account For Fees"
+        Expenses:Investments:Fidelity:Fees        14.22 GBP
+        Assets:Investments:Fidelity:ISA:Cash
+
+1998-09-26 * "Cash Dividend"
+        Assets:Investments:Fidelity:ISA:Cash        75.5 GBP
+        Income:Fidelity:ISA:VUSA:Divident
+
+1998-09-25 * "Buy"
+        Assets:Investments:Fidelity:ISA:VUSA        123 VUSA @ 80.9 GBP
+        Assets:Investments:Fidelity:ISA:Cash
+
+1998-09-25 * "Buy"
+        Assets:Investments:Fidelity:ISA:Ftse100        61.28 VFTSE @ 163.18 GBP
+        Assets:Investments:Fidelity:ISA:Cash
+
+1998-09-24 * "Cash In Lump Sum"
+        Assets:Investments:Fidelity:ISA:Cash        15000 GBP
+        Assets:WireTransfer:HSBC_FIDELITY
+
+1998-09-24 * "Buy"
+        Assets:Investments:Fidelity:ISA:Ftse100        24.48 VFTSE @ 163.45 GBP
+        Assets:Investments:Fidelity:ISA:Cash
+
+1998-09-24 * "Cash In Lump Sum"
+        Assets:Investments:Fidelity:ISA:Cash        5000 GBP
+        Assets:WireTransfer:HSBC_FIDELITY
+
+1998-09-19 * "Cash Interest"
+        Assets:Investments:Fidelity:InvestmentAccount:Cash        0.55 GBP
+        Income:Fidelity:InvestmentAccount:Cash:Interest
+
+1998-09-19 * "Cash Interest"
+        Assets:Investments:Fidelity:ISA:Cash        61.75 GBP
+        Income:Fidelity:ISA:Cash:Interest
+
