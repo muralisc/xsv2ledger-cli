@@ -126,7 +126,6 @@ value= "VUSA"
 
 
 [xsv_to_ledger_record.target_posting.price.cost_amount]
-
 [xsv_to_ledger_record.target_posting.price.cost_amount.amount]
 [xsv_to_ledger_record.target_posting.price.cost_amount.amount.quantity]
 [xsv_to_ledger_record.target_posting.price.cost_amount.amount.quantity.xsv_to_entry]

@@ -1,4 +1,4 @@
-# Example TOML
+# Monzo TOML
 has_headers = true
 delimiter = "comma"
 
@@ -15,7 +15,7 @@ column = 1
 
 [xsv_to_ledger_record.payee]
 [xsv_to_ledger_record.payee.xsv_to_entry]
-hint_columns = [4]      # Transaction type, Investments
+hint_columns = [4]
 
 [xsv_to_ledger_record.target_posting]
 [xsv_to_ledger_record.target_posting.account]
