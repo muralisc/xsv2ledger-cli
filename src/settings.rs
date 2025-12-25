@@ -3,6 +3,7 @@ use crate::posting::{Date, Note, Payee, Posting, State};
 use config::{Config, ConfigError, File};
 use serde::Deserialize;
 use std::collections::HashMap;
+use tracing::debug;
 
 // Date State Payee
 //      ; Note
@@ -40,12 +41,13 @@ impl XsvToLedgerRecord {
                 println!("{}; {}", tab_as_spaces, note_str);
             }
         }
-
+        debug!("Getting Target Posing string");
         println!(
             "{}{}",
             tab_as_spaces,
             self.target_posting.get_string(&record)
         );
+        debug!("Getting Source Posing string");
         println!(
             "{}{}",
             tab_as_spaces,

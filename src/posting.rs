@@ -34,7 +34,7 @@ impl XsvToEntry {
                 match re.find(&hint_string) {
                     Some(mat) => {
                         debug!(
-                            "Match for first account: {:?} hint: {:?}, value: {:?}",
+                            "Match for value: {:?} hint: {:?}, value: {:?}",
                             mat, item.key, item.value
                         );
                         return item.value.to_string();
@@ -120,6 +120,7 @@ pub struct Account {
 
 impl Account {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
+        debug!("Getting Account string");
         return self.xsv_to_entry.get_string(&record);
     }
 }
@@ -154,6 +155,7 @@ pub struct Amount {
 
 impl Amount {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
+        debug!("Getting Amount string");
         return format!(
             "{} {}",
             self.quantity.get_string(&record),
@@ -185,6 +187,7 @@ pub struct Price {
 
 impl Price {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
+        debug!("Getting Price string");
         let amount_str = self.amount.get_string(&record);
         if let Some(cost_amount) = &self.cost_amount {
             return format!("{}{}", amount_str, cost_amount.get_string(&record));

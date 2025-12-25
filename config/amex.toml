@@ -1,0 +1,106 @@
+# Amex TOML
+has_headers = true
+delimiter = "comma"
+
+[exclude]
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 0
+value = "Date"
+operation = "contains"
+
+[xsv_to_ledger_record.date]
+date_format="%d/%m/%Y"
+date_regex='\d{2}/\d{2}/\d{4}'
+column = 0
+
+[xsv_to_ledger_record.payee]
+[xsv_to_ledger_record.payee.xsv_to_entry]
+hint_columns = [1]
+
+[xsv_to_ledger_record.target_posting]
+[xsv_to_ledger_record.target_posting.account]
+[xsv_to_ledger_record.target_posting.account.xsv_to_entry]
+hint_columns = [1]
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = """\
+    PEPE PIRI PIRI|DELIVEROO|Kew Gardens|HARRODS|LONDON EYE|\
+    WESTMINSTER ABBEY|FACEBOOK KINGS|BEER AND BURGER|NETFLIX|\
+    VUE ENTERTAINMENT LTD|TASTE THE BEST|CHARLOTTE TILBURY BTY|HOTEL CHOCOLAT|\
+    ZARA|HM.COM|BABEL BEERHOUSE|HOTSTAR UK|REDEMPTION ROASTERS|FRAGRANCE SAMPLES UK|SP LOLAS CUPCAKES|VUE ENTERTAINMENT LTD|\
+    TUTTONS|LDN TRANSPORT MUSEUM|LEON|STREET FOOD|CHÂTEAU DE VERSAILLES|WENZELS|ROYAL BOTANIC GARDENS|RBG KEW|LONDON DUNGEON|GAIL|\
+    FACEBOOK RATHBONE|COSTA|IVY CAFE|ODEON|HOPPERS|PRET|Airbnb|THE IVY|MCDONALDS|STARBUCKS|CAFF?E|[CK]OFFEE|Print Bucket\
+    """
+value = "Expenses:Entertainment"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = """\
+    NISA LOCAL|OCADO|TESCO|MARKS (&|AND)|M&S|BEST FOODS|SAINSBURY|GRAINMILL|WAITROSE|KERALATASTE|ATHLETIC GREENS|THE HAMPSTEAD BUTCHER|\
+    NAYAXAU|SP LAKSHMI STORES UK|CO-OP\
+    """
+value = "Expenses:Groceries"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "IRCTC|BOOKING.COM|VFS Global Services Mumbai|TFL TRAVEL|TRAVEL UP|Airways|OYSTERCARD|UBER|LONDON WATERBUS|TFL GOODWILL"
+value = "Expenses:Transport"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "BOOTS|BARBER|OURARING|THRIVA|VINTAGE SCISSORS|ROYAL FREE HOSPITAL"
+value = "Expenses:Health"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "LEETCODE"
+value = "Expenses:Career"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "WIKIPEDIA GIFT"
+value = "Expenses:Donations"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "WWW.LOCRATING.COM|WH SMITH RETAIL|NORD|GENTLE HAIR DYE|AMAZON|AMZN|PRIMARK|Apple|Justpark|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree"
+value = "Expenses:Utilities"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = """\
+    NEXT NEXTDIRECTORY|J BARBOUR AND SONS|SP GLOVERALL            EARLS BARTON|CHARLES TYRWHITT SHIRTS|BRAVISSIMO LTD|SP ALLBIRDS|\
+    JOJO  NEXT TP|HOBBS LIMITED|ADIDAS|CINEWORLD|\
+    SHEIN DISTRIBUTION|IKEA|WATERSTONE|MECHBOARDS|PILLOWS|NEW BALANCE|BELLROY|RYOHIN KEIKAKU|UNIQLO EUROPE\
+    """
+value = "Expenses:Posessions"
+
+[[second_account_hint_mapping.income]]
+key = "PAYMENT RECEIVED"
+value = "Liabilities:CreditCard"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "MEMBERSHIP FEE|INTEREST CHARGE"
+value = "Expenses:Amex:Interest"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "POST OFFICE"
+value= "Assets:Bank:PostOfficeTravelMoneyCard"
+
+
+[xsv_to_ledger_record.target_posting.price.amount]
+[xsv_to_ledger_record.target_posting.price.amount.quantity]
+[xsv_to_ledger_record.target_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [2]
+
+[xsv_to_ledger_record.target_posting.price.amount.commodity]
+[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [2]
+
+[[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "GBP"
+
+[xsv_to_ledger_record.source_posting]
+[xsv_to_ledger_record.source_posting.account]
+[xsv_to_ledger_record.source_posting.account.xsv_to_entry]
+hint_columns = [2]
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "Assets:Bank:Amex"

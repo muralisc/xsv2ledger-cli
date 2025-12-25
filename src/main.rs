@@ -25,7 +25,7 @@ struct Args {
 }
 
 fn main() {
-    let debug_file_appender = File::create("xv2ledger.debug.log").unwrap();
+    let debug_file_appender = File::create("xsv2ledger.debug.log").unwrap();
     let (non_blocking_debug, _guard) = tracing_appender::non_blocking(debug_file_appender);
 
     tracing_subscriber::fmt()
