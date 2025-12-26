@@ -1,6 +1,7 @@
 mod exclude_condition;
 mod posting;
 mod xsv2ledger;
+mod xsv_to_entry;
 use xsv2ledger::Xsv2Ledger;
 
 mod settings;

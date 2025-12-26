@@ -2,31 +2,31 @@
 ; vim:set tw=200
 2025-11-28 * "Buy"
         ; Buy | GOOG | ALPHABET INC CLASS CLASS C
-        Assets:Investments:CharlesSchwab:GOOG        3 GOOG @ $320.95 USD
-        Assets:Investments:CharlesSchwab:Cash
+        Assets:Investments:CharlesSchwab:GOOG        3 GOOG @ 320.95 USD
+        Assets:Investments:CharlesSchwab:Cash        
 
 2025-11-26 * "Sell"
         ; Sell | META | META PLATFORMS INC CLASS CLASS A
-        Assets:Investments:CharlesSchwab:Cash        5 META @ $637.23 USD
-        Assets:Investments:CharlesSchwab:Meta
+        Assets:Investments:CharlesSchwab:Cash        
+        Assets:Investments:CharlesSchwab:Meta        5 META @ 637.23 USD
 
 2025-11-18 * "Stock Plan Activity"
         ; Stock Plan Activity | META | META PLATFORMS INC CLASS A
         Assets:Investments:CharlesSchwab:Meta        3 META
-        Income:Facebook:RSU
+        Income:Facebook:RSU        
 
 2025-11-18 * "Stock Plan Activity"
         ; Stock Plan Activity | META | META PLATFORMS INC CLASS A
         Assets:Investments:CharlesSchwab:Meta        2 META
-        Income:Facebook:RSU
+        Income:Facebook:RSU        
 
 2025-11-18 * "Stock Plan Activity"
         ; Stock Plan Activity | META | META PLATFORMS INC CLASS A
         Assets:Investments:CharlesSchwab:Meta        1 META
-        Income:Facebook:RSU
+        Income:Facebook:RSU        
 
 2025-11-18 * "Stock Plan Activity"
         ; Stock Plan Activity | META | META PLATFORMS INC CLASS A
         Assets:Investments:CharlesSchwab:Meta        9 META
-        Income:Facebook:RSU
+        Income:Facebook:RSU        
 

@@ -8,6 +8,14 @@ delimiter = "comma"
 type = "RecordLen"
 content = 1
 
+# Exclude Non Trade accounts
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 4              # Schwab:Quantity
+value = ""
+operation = "equal"
+
 [xsv_to_ledger_record.date]
 date_format="%m/%d/%Y"
 date_regex='\d{2}/\d{2}/\d{4}'
@@ -42,6 +50,14 @@ value = "Assets:Investments:CharlesSchwab:GOOG"
 key = "CSTNL"
 value = "Assets:Investments:CharlesSchwab:CSTNL"
 
+[xsv_to_ledger_record.target_posting.price.exclude]
+[[xsv_to_ledger_record.target_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.target_posting.price.exclude.conditions.content]
+column = 1              # Schwab:Action
+value = "Sell"
+operation = "equal"
+
 [xsv_to_ledger_record.target_posting.price.amount]
 [xsv_to_ledger_record.target_posting.price.amount.quantity]
 [xsv_to_ledger_record.target_posting.price.amount.quantity.xsv_to_entry]
@@ -69,7 +85,7 @@ value= "USD"
 [[xsv_to_ledger_record.target_posting.price.cost_amount.exclude.conditions]]
 type = "ColumnContainsValue"
 [xsv_to_ledger_record.target_posting.price.cost_amount.exclude.conditions.content]
-column = 5              # transaction type
+column = 5              # Schwab:Price
 value = ""
 operation = "equal"
 
@@ -89,3 +105,49 @@ value = "Assets:Investments:CharlesSchwab:Cash"
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "Sell.*META"
 value = "Assets:Investments:CharlesSchwab:Meta"
+
+[xsv_to_ledger_record.source_posting.price.exclude]
+[[xsv_to_ledger_record.source_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.exclude.conditions.content]
+column = 1              # Schwab:Action
+value = "Buy"
+operation = "equal"
+
+[[xsv_to_ledger_record.source_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.exclude.conditions.content]
+column = 1              # Schwab:Action
+value = "Stock Plan Activity"
+operation = "equal"
+
+[xsv_to_ledger_record.source_posting.price.amount]
+[xsv_to_ledger_record.source_posting.price.amount.quantity]
+[xsv_to_ledger_record.source_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [4]
+
+[xsv_to_ledger_record.source_posting.price.amount.commodity]
+[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [2]
+
+[xsv_to_ledger_record.source_posting.price.cost_amount]
+[xsv_to_ledger_record.source_posting.price.cost_amount.amount]
+[xsv_to_ledger_record.source_posting.price.cost_amount.amount.quantity]
+[xsv_to_ledger_record.source_posting.price.cost_amount.amount.quantity.xsv_to_entry]
+hint_columns = [5]
+
+[xsv_to_ledger_record.source_posting.price.cost_amount.amount.commodity]
+[xsv_to_ledger_record.source_posting.price.cost_amount.amount.commodity.xsv_to_entry]
+hint_columns = [5]
+
+[[xsv_to_ledger_record.source_posting.price.cost_amount.amount.commodity.xsv_to_entry.hint_mapping]]
+key= "$"
+value= "USD"
+
+[xsv_to_ledger_record.source_posting.price.cost_amount.exclude]
+[[xsv_to_ledger_record.source_posting.price.cost_amount.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.cost_amount.exclude.conditions.content]
+column = 5              # Schwab:Price
+value = ""
+operation = "equal"
