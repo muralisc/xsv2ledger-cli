@@ -1,7 +1,7 @@
 ; vim:ft=ledger
 ; vim:set tw=200
 2025-01-01 * "MEDELA UK LTD           IRLAM, MANCHEST"
-        MEDELA UK LTD           IRLAM, MANCHEST        49.00 GBP
+        Expenses:Health        49.00 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "BEST FOODS              WEMBLEY"
@@ -48,20 +48,12 @@
         Expenses:Transport        13.96 GBP
         Assets:Bank:Amex
 
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
 2025-01-01 * "UBER TRIP               HTTPS://HELP.UB"
         Expenses:Transport        22.93 GBP
         Assets:Bank:Amex
 
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
 2025-01-01 * "ALI*ALIEXPRESS Alipay   SINGAPORE"
-        ALI*ALIEXPRESS Alipay   SINGAPORE        8.97 GBP
+        Expenses:Posessions        8.97 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMZNMKTPLACE*ZL9D35XA4  AMAZON.CO.UK"
@@ -69,15 +61,11 @@
         Assets:Bank:Amex
 
 2025-01-01 * "PAYMENT RECEIVED - THANK YOU"
-        PAYMENT RECEIVED - THANK YOU        -1873.44 GBP
+        Liabilities:CreditCard        -1873.44 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "DELIVEROO               LONDON"
         Expenses:Entertainment        38.34 GBP
-        Assets:Bank:Amex
-
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "UBER TRIP               HTTPS://HELP.UB"
@@ -88,14 +76,6 @@
         Expenses:Entertainment        17.49 GBP
         Assets:Bank:Amex
 
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
 2025-01-01 * "OCADO                   HATFIELD"
         Expenses:Groceries        77.15 GBP
         Assets:Bank:Amex
@@ -104,16 +84,8 @@
         Expenses:Entertainment        28.51 GBP
         Assets:Bank:Amex
 
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
 2025-01-01 * "TFL TRAVEL CHARGE       TFL.GOV.UK/CP"
         Expenses:Transport        8.00 GBP
-        Assets:Bank:Amex
-
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "LEBARA MOBILE LIMITED   LONDON"
@@ -176,10 +148,6 @@
         Expenses:Groceries        75.30 GBP
         Assets:Bank:Amex
 
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
 2025-01-01 * "DELIVEROO               LONDON"
         Expenses:Entertainment        14.94 GBP
         Assets:Bank:Amex
@@ -197,7 +165,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "DISNEY PLUS             HAMMERSMITH, LO"
-        DISNEY PLUS             HAMMERSMITH, LO        9.99 GBP
+        Expenses:Utilities        9.99 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "TFL TRAVEL CHARGE       TFL.GOV.UK/CP"
@@ -213,7 +181,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "JOHN LEWIS DIRECT       LONDON"
-        JOHN LEWIS DIRECT       LONDON        199.00 GBP
+        Expenses:Posessions        199.00 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "DELIVEROO               LONDON"
@@ -230,10 +198,6 @@
 
 2025-01-01 * "UBER TRIP               HTTPS://HELP.UB"
         Expenses:Transport        37.98 GBP
-        Assets:Bank:Amex
-
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "DELIVEROO               LONDON"
@@ -313,7 +277,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "MEDELA UK LTD           IRLAM, MANCHEST"
-        MEDELA UK LTD           IRLAM, MANCHEST        49.00 GBP
+        Expenses:Health        49.00 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON.CO.UK*5M4AW2G05  353-12477661"
@@ -369,19 +333,15 @@
         Assets:Bank:Amex
 
 2025-01-01 * "PAYMENT RECEIVED - THANK YOU"
-        PAYMENT RECEIVED - THANK YOU        -2626.50 GBP
+        Liabilities:CreditCard        -2626.50 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON PRIME*3C9T55T15  AMZN.CO.UK/PM"
         Expenses:Utilities        8.99 GBP
         Assets:Bank:Amex
 
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
 2025-01-01 * "LUL TICKET MACHINE LUL  -"
-        LUL TICKET MACHINE LUL  -        45.00 GBP
+        Expenses:Transport        45.00 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "SP ALLBIRDS UK          LONDON"
@@ -401,7 +361,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "SP CDL-GROUP LLC        USINGEN"
-        SP CDL-GROUP LLC        USINGEN        55.20 GBP
+        Expenses:Posessions        55.20 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON.CO.UK*XN3HJ15O5  AMAZON.CO.UK"
@@ -421,15 +381,11 @@
         Assets:Bank:Amex
 
 2025-01-01 * "SP CLAIR DE LUNE        MANCHESTER"
-        SP CLAIR DE LUNE        MANCHESTER        34.94 GBP
+        Expenses:Posessions        34.94 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON.CO.UK*ZN89L1334  AMAZON.CO.UK"
         Expenses:Utilities        24.99 GBP
-        Assets:Bank:Amex
-
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "OCADO                   HATFIELD"
@@ -444,10 +400,6 @@
         Expenses:Utilities        147.98 GBP
         Assets:Bank:Amex
 
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.10 GBP
-        Assets:Bank:Amex
-
 2025-01-01 * "SP ALLBIRDS UK          LONDON"
         Expenses:Posessions        125.00 GBP
         Assets:Bank:Amex
@@ -458,10 +410,6 @@
 
 2025-01-01 * "TFL TRAVEL CHARGE       TFL.GOV.UK/CP"
         Expenses:Transport        8.00 GBP
-        Assets:Bank:Amex
-
-2025-01-01 * "SOMEPLACE KINGS CROSS    London"
-        SOMEPLACE KINGS CROSS    London        3.40 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "UBER TRIP               HTTPS://HELP.UB"
@@ -533,7 +481,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "SP NEARLY NEW CASHME    RIPON"
-        SP NEARLY NEW CASHME    RIPON        74.85 GBP
+        Expenses:Posessions        74.85 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "TFL TRAVEL CHARGE       TFL.GOV.UK/CP"
@@ -613,7 +561,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "MEDELA UK LTD           IRLAM, MANCHEST"
-        MEDELA UK LTD           IRLAM, MANCHEST        49.00 GBP
+        Expenses:Health        49.00 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "OCADO                   HATFIELD"
@@ -673,7 +621,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "1164 Cherry Tree Walk   London"
-        1164 Cherry Tree Walk   London        16.48 GBP
+        Expenses:Groceries        16.48 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON.CO.UK*8U1YS1AZ5  AMAZON.CO.UK"
@@ -733,7 +681,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "PAYMENT RECEIVED - THANK YOU"
-        PAYMENT RECEIVED - THANK YOU        -1822.40 GBP
+        Liabilities:CreditCard        -1822.40 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON PRIME*BD6G210E5  AMZN.CO.UK/PM"
@@ -865,7 +813,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "SNAPPY SNAPS EDGWARE    Edgware"
-        SNAPPY SNAPS EDGWARE    Edgware        41.98 GBP
+        Expenses:Posessions        41.98 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "TFL TRAVEL CHARGE       TFL.GOV.UK/CP"
@@ -881,7 +829,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "SP BABY CENTRE          BOURNEMOUTH"
-        SP BABY CENTRE          BOURNEMOUTH        425.00 GBP
+        Expenses:Posessions        425.00 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "TFL TRAVEL CHARGE       TFL.GOV.UK/CP"
