@@ -88,7 +88,7 @@ value= "Assets:Bank:PostOfficeTravelMoneyCard"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key = "PAYMENT RECEIVED"
-value = "Liabilities:CreditCard"
+value = "Liabilities:Amex:BACreditCard"
 
 
 [xsv_to_ledger_record.target_posting.price.amount]

@@ -62,7 +62,7 @@ value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "AMERICAN EXP"
-value = "Liabilities:CreditCard"
+value = "Liabilities:Amex:BACreditCard"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "L&Q|Barnet|Locrating|Direct Debit.*Stripe"
@@ -90,7 +90,7 @@ value = "Expenses:Groceries"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "AMERICAN EXP"
-value = "Liabilities:CreditCard"
+value = "Liabilities:Amex:BACreditCard"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 # for HSBC

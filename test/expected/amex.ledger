@@ -61,7 +61,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "PAYMENT RECEIVED - THANK YOU"
-        Liabilities:CreditCard        -1873.44 GBP
+        Liabilities:Amex:BACreditCard        -1873.44 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "DELIVEROO               LONDON"
@@ -333,7 +333,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "PAYMENT RECEIVED - THANK YOU"
-        Liabilities:CreditCard        -2626.50 GBP
+        Liabilities:Amex:BACreditCard        -2626.50 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON PRIME*3C9T55T15  AMZN.CO.UK/PM"
@@ -681,7 +681,7 @@
         Assets:Bank:Amex
 
 2025-01-01 * "PAYMENT RECEIVED - THANK YOU"
-        Liabilities:CreditCard        -1822.40 GBP
+        Liabilities:Amex:BACreditCard        -1822.40 GBP
         Assets:Bank:Amex
 
 2025-01-01 * "AMAZON PRIME*BD6G210E5  AMZN.CO.UK/PM"

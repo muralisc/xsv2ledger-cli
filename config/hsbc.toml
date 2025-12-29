@@ -54,7 +54,7 @@ value = "Expenses:Groceries"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "AMERICAN EXP"
-value = "Liabilities:CreditCard"
+value = "Liabilities:Amex:BACreditCard"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "AMZNMktplace|AMAZON.CO.UK|Amazon Prime"
