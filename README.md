@@ -25,4 +25,25 @@ to
         Expenses:Utilities
 ```
 
+Exmaple csv:
+https://github.com/muralisc/xsv2ledger-cli/blob/c9b2205812c0247b571a5ead73baaf681c687531/test/test_xsv/monzo.csv?plain=1#L3-L6
+Example snippet:
+https://github.com/muralisc/xsv2ledger-cli/blob/c9b2205812c0247b571a5ead73baaf681c687531/test/expected/monzo.ledger#L7-L21
 
+### How to run
+```
+RUST_BACKTRACE=1 cargo run -- \
+    --config $PATH_TO_XSV2LEDGER_CLI/config/monzo.toml \
+    --transactions-csv $PATH_TO_CSV/Monzo\ Data\ Export\ -\ July.csv \
+    > $PATH_TO_LEDGER_FILES/ledger/ledger_2023_03Mar_monzo.ledger
+```
+
+### Pre-existing config files
+- Monzo
+- HSBC
+- Fidelity UK
+- Charles Schwab
+- Amex
+- SBI (State Bank of India)
+
+Details on how to obtain CSV: [supported-institutions.md](https://github.com/muralisc/xsv2ledger-cli/blob/main/docs/supported-institutions.md)
