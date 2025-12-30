@@ -37,14 +37,14 @@ Schwab > Accounts > History > Export > Filter Transcation Types {trades, non-tra
 Trades:
 ```
 RUST_BACKTRACE=1 cargo run -- \
-  --config $PATH_TO_BANK2LEDGER_CLI/config/schwab-trades.toml \
+  --config $PATH_TO_XSV2LEDGER_CLI/config/schwab-trades.toml \
   --transactions-csv $PATH_TO_CSV/schwab_Transactions_20230409-103308.csv \
   > $PATH_TO_LEDGER_FILES/ledger/ledger_2023_03Mar_schwab.ledger
 ```
 
 ```
 RUST_BACKTRACE=1 cargo run -- \
-  --config $PATH_TO_BANK2LEDGER_CLI/config/schwab-non-trades.toml \
+  --config $PATH_TO_XSV2LEDGER_CLI/config/schwab-non-trades.toml \
   --transactions-csv $PATH_TO_CSV/schwab_Transactions_20230409-103308.csv \
   > $PATH_TO_LEDGER_FILES/ledger/ledger_2023_03Mar_schwab.ledger
 ```
@@ -62,7 +62,7 @@ From web portal
 ### Command to run
 ```
 RUST_BACKTRACE=1 cargo run -- \
-    --config $PATH_TO_BANK2LEDGER_CLI/config/hsbc.toml \
+    --config $PATH_TO_XSV2LEDGER_CLI/config/hsbc.toml \
     --transactions-csv $PATH_TO_CSV/hsbc_TrasactionHistory_09_April_2023.csv \
     > $PATH_TO_LEDGER_FILES/ledger/ledger_2023_03Mar_hsbc.ledger
 ```
@@ -79,7 +79,7 @@ RUST_BACKTRACE=1 cargo run -- \
 ### Command to run
 ```
 RUST_BACKTRACE=1 cargo run -- \
-    --config $PATH_TO_BANK2LEDGER_CLI/config/amex.toml \
+    --config $PATH_TO_XSV2LEDGER_CLI/config/amex.toml \
     --transactions-csv $PATH_TO_CSV/amex-dec.csv \
     > $PATH_TO_LEDGER_FILES/ledger/ledger_2023_03Mar_amex.ledger
 ```
@@ -89,7 +89,7 @@ RUST_BACKTRACE=1 cargo run -- \
 ### Command to run
 ```
 RUST_BACKTRACE=1 cargo run -- \
-    --config $PATH_TO_BANK2LEDGER_CLI/config/monzo.toml \
+    --config $PATH_TO_XSV2LEDGER_CLI/config/monzo.toml \
     --transactions-csv $PATH_TO_CSV/Monzo\ Data\ Export\ -\ July.csv \
     > $PATH_TO_LEDGER_FILES/ledger/ledger_2023_03Mar_monzo.ledger
 ```
