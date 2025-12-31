@@ -1,5 +1,9 @@
+use crate::date::Date;
 use crate::exclude_condition::Exclude;
-use crate::posting::{Date, Note, Payee, Posting, State};
+use crate::note::Note;
+use crate::payee::Payee;
+use crate::posting::Posting;
+use crate::state::State;
 use config::{Config, ConfigError, File};
 use serde::Deserialize;
 use std::collections::HashMap;

@@ -1,8 +1,12 @@
 mod amount;
 mod cost_amount;
+mod date;
 mod exclude_condition;
+mod note;
+mod payee;
 mod posting;
 mod price;
+mod state;
 mod xsv2ledger;
 mod xsv_to_entry;
 use xsv2ledger::Xsv2Ledger;

@@ -1,4 +1,6 @@
 #!/bin/sh
+set -e
+
 cargo run -- --transactions-csv test/test_xsv/fidelity-1999.csv --config config/fidelity.toml | diff test/expected/fidelity.ledger -
 \ledger b --permissive -f test/expected/fidelity.ledger
 
