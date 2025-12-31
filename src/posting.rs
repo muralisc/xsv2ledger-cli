@@ -1,4 +1,4 @@
-use crate::exclude_condition::Exclude;
+use crate::price::Price;
 use crate::xsv_to_entry::XsvToEntry;
 use chrono::NaiveDate;
 use regex::RegexBuilder;
@@ -77,83 +77,6 @@ impl Account {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
         debug!("Getting Account string");
         return self.xsv_to_entry.get_string(&record);
-    }
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Quantity {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-impl Quantity {
-    pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        return self.xsv_to_entry.get_string(&record).replace("$", "");
-    }
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Commodity {
-    pub xsv_to_entry: XsvToEntry,
-}
-
-impl Commodity {
-    pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        return self.xsv_to_entry.get_string(&record);
-    }
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Amount {
-    pub quantity: Quantity,
-    pub commodity: Commodity,
-}
-
-impl Amount {
-    pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        debug!("Getting Amount string");
-        return format!(
-            "{} {}",
-            self.quantity.get_string(&record),
-            self.commodity.get_string(&record)
-        );
-    }
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct CostAmount {
-    pub amount: Amount,
-    pub exclude: Exclude,
-}
-
-impl CostAmount {
-    pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        if self.exclude.exclude(&record) {
-            return "".to_string();
-        }
-        return format!(" @ {}", self.amount.get_string(&record));
-    }
-}
-
-#[derive(Debug, Deserialize, Clone)]
-pub struct Price {
-    pub amount: Amount,
-    pub cost_amount: Option<CostAmount>,
-    pub exclude: Option<Exclude>,
-}
-
-impl Price {
-    pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        debug!("Getting Price string");
-        if let Some(exclude) = &self.exclude {
-            if exclude.exclude(&record) {
-                return "".to_string();
-            }
-        }
-        let amount_str = self.amount.get_string(&record);
-        if let Some(cost_amount) = &self.cost_amount {
-            return format!("{}{}", amount_str, cost_amount.get_string(&record));
-        }
-        return amount_str;
     }
 }
 
