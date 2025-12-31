@@ -8,6 +8,13 @@ delimiter = "comma"
 type = "RecordLen"
 content = 1
 
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 3
+value = "Pot transfer"
+operation = "contains"
+
 [xsv_to_ledger_record.date]
 date_format="%d/%m/%Y"
 date_regex='\d{2}/\d{2}/\d{4}'
@@ -45,7 +52,8 @@ key = "Stitch Fix|Kprepublic"
 value = "Expenses:Posessions"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Uber$|Postofficetravel|Transport for London|Railcard|Vehicle Licensing Agency|Safe Driving For Life|Travel Up"
+key = """Uber$|Postofficetravel|Transport for London|Railcard|Vehicle Licensing Agency|Safe Driving For Life|Travel Up|\
+    Lul Ticket"""
 value = "Expenses:Transport"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
@@ -53,7 +61,9 @@ key = "UK Visas & Immigration|Oyster|AA Driving School|Pramod Khatti"
 value = "Expenses:Transport"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Digital Ocean|Hyperoptic|Amazon|Metropolitan Infrastru|Virgin Media|Lebara|Scottish Power|Royal Mail|Spotify|Better UK"
+key = """Digital Ocean|Hyperoptic|Amazon|Metropolitan Infrastru|Virgin Media|\
+    Golden Scissors|\
+    Lebara|Scottish Power|Royal Mail|Spotify|Better UK"""
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
@@ -73,7 +83,7 @@ key = "Hoppers|deliveroo|Netflix|ODEON|Burger King|Crown Cafe Bar|Costa Coffee|U
 value = "Expenses:Entertainment"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Champ De Mars|Airbnb|Sonyliv"
+key = "Champ De Mars|Airbnb|Sonyliv|Pi Hut"
 value = "Expenses:Entertainment"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
@@ -109,3 +119,7 @@ value =  "Income:LivingShare"
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key= "SURESHCHANDR"
 value= "Assets:WireTransfer:MONZO_HSBC"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key= "IBKR"
+value= "Assets:WireTransfer:MONZO_IBKR"
