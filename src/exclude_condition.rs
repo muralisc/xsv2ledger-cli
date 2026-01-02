@@ -1,16 +1,6 @@
 use serde::Deserialize;
 use tracing::debug;
-
-#[derive(Debug, Deserialize, Clone)]
-#[serde(tag = "type", content = "content")]
-pub enum ConditionTypes {
-    ColumnContainsValue {
-        column: usize,
-        value: String,
-        operation: String,
-    },
-    RecordLen(usize),
-}
+use crate::condition_types::ConditionTypes;
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Exclude {

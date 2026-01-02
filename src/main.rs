@@ -9,6 +9,7 @@ mod price;
 mod state;
 mod xsv2ledger;
 mod xsv_to_entry;
+mod condition_types;
 use xsv2ledger::Xsv2Ledger;
 
 mod settings;
