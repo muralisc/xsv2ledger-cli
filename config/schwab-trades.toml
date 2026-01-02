@@ -95,6 +95,10 @@ operation = "equal"
 hint_columns = [1,2]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Security Transfer"
+value = "Assets:WireTransfer:SCHWAB_IBKR"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "Stock Plan Activity"
 value = "Income:Facebook:RSU"
 
@@ -119,6 +123,13 @@ type = "ColumnContainsValue"
 [xsv_to_ledger_record.source_posting.price.exclude.conditions.content]
 column = 1              # Schwab:Action
 value = "Stock Plan Activity"
+operation = "equal"
+
+[[xsv_to_ledger_record.source_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.exclude.conditions.content]
+column = 1              # Schwab:Action
+value = "Security Transfer"
 operation = "equal"
 
 [xsv_to_ledger_record.source_posting.price.amount]
