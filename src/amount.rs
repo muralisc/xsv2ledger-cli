@@ -11,10 +11,16 @@ pub struct Quantity {
 
 impl Quantity {
     pub fn get_string(&self, record: &csv::StringRecord) -> String {
-        let quantity = self.xsv_to_entry.get_string(&record).replace("$", "");
+        let mut quantity = self.xsv_to_entry.get_string(&record).replace("$", "");
         if let Some(invert_sign) = &self.invert_sign {
             if invert_sign.invert(record) {
-                return quantity;
+                quantity = if quantity.starts_with('+') {
+                    format!("-{}", &quantity[1..])
+                } else if quantity.starts_with('-') {
+                    format!("+{}", &quantity[1..])
+                } else {
+                    format!("-{}", quantity)
+                };
             }
         }
         return quantity;

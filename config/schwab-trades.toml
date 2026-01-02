@@ -123,6 +123,13 @@ operation = "equal"
 
 [xsv_to_ledger_record.source_posting.price.amount]
 [xsv_to_ledger_record.source_posting.price.amount.quantity]
+[[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions.content]
+column = 1              # Schwab:Action
+value = "Sell"
+operation = "equal"
+
 [xsv_to_ledger_record.source_posting.price.amount.quantity.xsv_to_entry]
 hint_columns = [4]
 
