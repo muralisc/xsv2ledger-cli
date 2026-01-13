@@ -63,7 +63,7 @@ value = "Expenses:Donations"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key = """WWW.LOCRATING.COM|WH SMITH RETAIL|NORD|GENTLE HAIR DYE|AMAZON|\
-    DISNEY PLUS|\
+    DISNEY PLUS|CLAUDE.AI SUBSCRIPTION  SAN FRANCISCO|\
     AMZN|PRIMARK|Apple|Justpark|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree"""
 value = "Expenses:Utilities"
 
