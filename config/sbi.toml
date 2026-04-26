@@ -29,11 +29,11 @@ hint_columns = [1]
 hint_columns = [1]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "DEBIT   ACHDr NACH00 000000017880 YES BANK"
+key= "DEBIT   ACHDr NACH00000000017880 YES BANK"
 value= "Expenses:Donations"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "jaleelsada|jishaavino"
+key= "jaleelsada|jishaavino|nsureshc|Hamleys|CREDIT   Chq 101787"
 value= "Expenses:Gifts"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
@@ -41,7 +41,7 @@ key= "CEMTEX DEP|DEP TFR   NEFT|DEP TFR   PFN"
 value= "Income:Zerodha:Divident"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "0098047041826 AT 04182|9273105219 AT 04182"
+key= "0098047041826 AT 04182|9273105219 AT 04182|Zerodha"
 value= "Expenses:UnaccountedExpenses"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
@@ -53,11 +53,35 @@ key = "LICPGINEW"
 value = "Assets:LongTerm:LIC"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Airtel|Amazon"
+key = "Airtel|Amazon|www olx|appleservi|netflix"
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "LOCKER"
+key = "self   0041456697336 OF Mr. MURALI  SURESHCHAN"
+value= "Assets:WireTransfer:SBI_SBI"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Petrol0097691162095|UBER IND|UPILITE|K I George"
+value = "Expenses:Transport"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "springgard|IP BILLI|ER MAIN"
+value = "Expenses:Health"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "zudioaunit|westside|macfoslimi"
+value = "Expenses:Posessions"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "KARSHIKA|Adeena S"
+value = "Expenses:Groceries"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "SWIGGY|CHAI CHAI|currentboo|Lulu Tri|BAKERS A"
+value = "Expenses:Entertainment"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "LOCKER|ATMCardAMC"
 value = "Expenses:SBI:Fees"
 
 [xsv_to_ledger_record.target_posting.price.amount]

@@ -20,7 +20,15 @@ impl XsvToEntry {
         let hint_string = self
             .hint_columns
             .iter()
-            .map(|i| record[*i].to_string())
+            .map(|i| {
+                // Remove any newlines in column
+                record[*i]
+                    .to_string()
+                    .split('\n')
+                    .map(|l| l.trim().to_string())
+                    .collect::<Vec<String>>()
+                    .join("")
+            })
             .collect::<Vec<String>>()
             .join(" | ");
         if let Some(mapping) = &self.hint_mapping {
