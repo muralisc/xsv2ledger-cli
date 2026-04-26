@@ -1,0 +1,123 @@
+# Axis toml
+has_headers = false
+delimiter = "comma"
+
+[exclude]
+[[exclude.conditions]]
+type = "RecordLen"
+content = 1
+
+[[exclude.conditions]]
+type = "RecordLen"
+content = 2
+
+[[exclude.conditions]]
+type = "RecordLen"
+content = 3
+
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 0
+value = ":-"
+operation = "contains"
+
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 0
+value = "Tran Date"
+operation = "contains"
+
+[xsv_to_ledger_record.date]
+date_format="%d-%m-%Y"
+date_regex='\d{2}-\d{2}-\d{4}'
+column = 0
+
+[xsv_to_ledger_record.payee]
+[xsv_to_ledger_record.payee.xsv_to_entry]
+hint_columns = [2]      # Transaction type, Investments
+
+[xsv_to_ledger_record.target_posting]
+[xsv_to_ledger_record.target_posting.account]
+[xsv_to_ledger_record.target_posting.account.xsv_to_entry]
+hint_columns = [2]
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "SB:5153341817:Int|Int on SB AC"
+value= "Income:Axis:Interest"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "C247522972/TATA AIA LIFE INSURANCE"
+value= "Assets:Investments:TataSmartPlusInsurance"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "MrMURALI/STATEBAN"
+value= "Assets:WireTransfer:SBI_AXIS"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "Ac xfr from"
+value= "Assets:WireTransfer:AXIS_AXIS"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "AMAZON PAY|ICONN REF"
+value= "Expenses:Posessions"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "SPRING GARDEN HEA"
+value = "Expenses:Health"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key= "IDEAL HOME APPLIA/THIRUVANANTHA"
+value = "Expenses:Posessions"
+
+[xsv_to_ledger_record.target_posting.price.amount]
+[xsv_to_ledger_record.target_posting.price.amount.quantity]
+[xsv_to_ledger_record.target_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [3]
+
+[xsv_to_ledger_record.target_posting.price.amount.commodity]
+[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [3]
+
+[[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "INR"
+
+[xsv_to_ledger_record.target_posting.price.exclude]
+[[xsv_to_ledger_record.target_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.target_posting.price.exclude.conditions.content]
+column = 3
+value = " "
+operation = "equal"
+
+[xsv_to_ledger_record.source_posting]
+[xsv_to_ledger_record.source_posting.account]
+[xsv_to_ledger_record.source_posting.account.xsv_to_entry]
+hint_columns = [2]
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "Assets:Bank:Axis:Savings"
+
+[xsv_to_ledger_record.source_posting.price.amount]
+[xsv_to_ledger_record.source_posting.price.amount.quantity]
+[xsv_to_ledger_record.source_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [4]
+
+[xsv_to_ledger_record.source_posting.price.amount.commodity]
+[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [4]
+
+[[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "INR"
+
+[xsv_to_ledger_record.source_posting.price.exclude]
+[[xsv_to_ledger_record.source_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.exclude.conditions.content]
+column = 4
+value = " "
+operation = "equal"

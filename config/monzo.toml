@@ -45,7 +45,7 @@ hint_columns = [8]
 [xsv_to_ledger_record.source_posting]
 [xsv_to_ledger_record.source_posting.account]
 [xsv_to_ledger_record.source_posting.account.xsv_to_entry]
-hint_columns = [3,4]
+hint_columns = [3,4,14]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key = "Stitch Fix|Kprepublic"
@@ -67,7 +67,7 @@ key = """Digital Ocean|Hyperoptic|Amazon|Metropolitan Infrastru|Virgin Media|\
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Moogoo EU|JustPark|Vintage Scisso|Metropolitan|Manorama Products|Octopus Energy|Card Payment.*ATM"
+key = "Moogoo EU|Post Office|UPS LTD|godaddy|JustPark|Vintage Scisso|Metropolitan|Manorama Products|Octopus Energy|Card Payment.*ATM|COMANCO"
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
@@ -83,7 +83,7 @@ key = "Hoppers|deliveroo|Netflix|ODEON|Burger King|Crown Cafe Bar|Costa Coffee|U
 value = "Expenses:Entertainment"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Champ De Mars|Airbnb|Sonyliv|Pi Hut|Lemonia"
+key = "Champ De Mars|Airbnb|Sonyliv|Pi Hut|Facebook Kings Cro|Lemonia"
 value = "Expenses:Entertainment"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]

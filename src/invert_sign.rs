@@ -1,5 +1,5 @@
-use crate::condition_types::ConditionTypes;
 use crate::condition_types::eval_conditions;
+use crate::condition_types::ConditionTypes;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize, Clone)]
