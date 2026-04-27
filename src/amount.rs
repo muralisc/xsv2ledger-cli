@@ -17,7 +17,7 @@ impl Quantity {
                 quantity = if quantity.starts_with('+') {
                     format!("-{}", &quantity[1..])
                 } else if quantity.starts_with('-') {
-                    format!("+{}", &quantity[1..])
+                    format!("{}", &quantity[1..])
                 } else {
                     format!("-{}", quantity)
                 };

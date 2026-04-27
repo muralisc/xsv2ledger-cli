@@ -1,0 +1,65 @@
+# Schwab Non TOML
+has_headers = false
+delimiter = "comma"
+
+[exclude]
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 0
+value = "Date"
+operation = "contains"
+
+[xsv_to_ledger_record.date]
+date_format="%m/%d/%Y"
+date_regex='\d{2}/\d{2}/\d{4}'
+column = 0
+
+[xsv_to_ledger_record.payee]
+[xsv_to_ledger_record.payee.xsv_to_entry]
+hint_columns = [1]
+
+[xsv_to_ledger_record.notes]
+[xsv_to_ledger_record.notes.xsv_to_entry]
+hint_columns = [1,2,3]
+
+[xsv_to_ledger_record.target_posting]
+[xsv_to_ledger_record.target_posting.account]
+[xsv_to_ledger_record.target_posting.account.xsv_to_entry]
+hint_columns = [1,2]
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Credit Interest"
+value = "Income:Schwab:Interest"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Dividend"
+value = "Income:Schwab:Interest"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Tax Adj"
+value = "Expenses:Schwab:Tax"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Security Transfer"
+value = "Assets:WireTransfer:SCHWAB_IBKR"
+
+[xsv_to_ledger_record.source_posting]
+[xsv_to_ledger_record.source_posting.account]
+[xsv_to_ledger_record.source_posting.account.xsv_to_entry]
+hint_columns = [1,2,3]
+
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = ".*"
+value = "Assets:Investments:CharlesSchwab:Cash"
+
+[xsv_to_ledger_record.source_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [7]
+
+[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [7]
+
+[[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
+key= "$"
+value= "USD"

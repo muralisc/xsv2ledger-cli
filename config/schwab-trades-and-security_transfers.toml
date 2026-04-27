@@ -1,12 +1,14 @@
 # Schwab TOML
-has_headers = true
+has_headers = false
 delimiter = "comma"
-
 
 [exclude]
 [[exclude.conditions]]
-type = "RecordLen"
-content = 1
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 0
+value = "Date"
+operation = "contains"
 
 # Exclude Non Trade accounts
 [[exclude.conditions]]

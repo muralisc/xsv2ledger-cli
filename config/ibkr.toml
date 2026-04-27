@@ -1,0 +1,185 @@
+# IBKR
+has_headers = true
+delimiter = "comma"
+
+# IBKR lets you reorganize the columns. this is the order followed in this toml
+# 0. Transaction History
+# 1. Header
+# 2. Date
+# 3. Account
+# 4. Description
+# 5. Transaction Type
+# 6. Symbol
+# 7. Quantity
+# 8. Price
+# 9. Price Currency
+# 10. Gross Amount 
+# 11. Commission
+# 12. Net Amount
+# 13. Exchange Rate
+# 14. Transaction Fees
+
+[exclude]
+[[exclude.conditions]]
+type = "RecordLen"
+content = 4
+
+[[exclude.conditions]]
+type = "ColumnContainsValue"
+[exclude.conditions.content]
+column = 2
+value = "Date"
+operation = "contains"
+
+[xsv_to_ledger_record.date]
+date_format="%Y-%m-%d"
+date_regex='\d{4}-\d{2}-\d{2}'
+column = 2
+
+[xsv_to_ledger_record.payee]
+[xsv_to_ledger_record.payee.xsv_to_entry]
+hint_columns = [4, 5, 6]
+
+[xsv_to_ledger_record.target_posting]
+[xsv_to_ledger_record.target_posting.account]
+[xsv_to_ledger_record.target_posting.account.xsv_to_entry]
+hint_columns = [4, 5, 6]
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Electronic Fund Transfer|Cash Transfer"
+value = "Assets:Investments:IBKR:Cash"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "NVDA.*Cash Dividend|VOO.*Cash Dividend|GOOG.*Cash Dividend"
+value = "Assets:Investments:IBKR:Cash:USD"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Buy.*VUAG"
+value = "Assets:Investments:IBKR:VUAG"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Buy.*VOO"
+value = "Assets:Investments:IBKR:VOO"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "Buy.*NVDA"
+value = "Assets:Investments:IBKR:NVDA"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key = "USD Credit Interest|FX Translations"
+value = "Assets:Investments:IBKR:Cash:USD"
+
+[xsv_to_ledger_record.target_posting.price.exclude]
+[[xsv_to_ledger_record.target_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.target_posting.price.exclude.conditions.content]
+column = 7              # IBKR:Quantity
+value = "-"
+operation = "equal"
+
+[xsv_to_ledger_record.target_posting.price.amount]
+[xsv_to_ledger_record.target_posting.price.amount.quantity]
+[xsv_to_ledger_record.target_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [7]
+
+[xsv_to_ledger_record.target_posting.price.amount.commodity]
+[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [6]
+
+[[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
+key= "-"
+value= "USD"
+
+[xsv_to_ledger_record.target_posting.price.cost_amount]
+[xsv_to_ledger_record.target_posting.price.cost_amount.amount]
+[xsv_to_ledger_record.target_posting.price.cost_amount.amount.quantity]
+[xsv_to_ledger_record.target_posting.price.cost_amount.amount.quantity.xsv_to_entry]
+hint_columns = [8]
+
+[xsv_to_ledger_record.target_posting.price.cost_amount.amount.commodity]
+[xsv_to_ledger_record.target_posting.price.cost_amount.amount.commodity.xsv_to_entry]
+hint_columns = [9]
+
+[xsv_to_ledger_record.target_posting.price.cost_amount.exclude]
+[[xsv_to_ledger_record.target_posting.price.cost_amount.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.target_posting.price.cost_amount.exclude.conditions.content]
+column = 8              # IBKR:Price
+value = "-"
+operation = "equal"
+
+[xsv_to_ledger_record.source_posting]
+[xsv_to_ledger_record.source_posting.account]
+[xsv_to_ledger_record.source_posting.account.xsv_to_entry]
+hint_columns = [4, 5, 6]
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Electronic Fund Transfer"
+value= "Assets:WireTransfer:MONZO_IBKR"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Cash Transfer"
+value= "Assets:WireTransfer:SCHWAB_IBKR"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Buy.*VUAG"
+value = "Assets:Investments:IBKR:Cash:GBP"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "Buy.*VOO|Buy.*NVDA"
+value = "Assets:Investments:IBKR:Cash:USD"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "USD Credit Interest"
+value = "Income:IBKR:Interest"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "NVDA.*Cash Dividend.*Ordinary Dividend|VOO.*Cash Dividend.*Ordinary Dividend|GOOG.*Cash Dividend.*Ordinary Dividend"
+value = "Income:IBKR:Dividend"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "NVDA.*Cash Dividend.*US Tax|VOO.*Cash Dividend.*US Tax|GOOG.*Cash Dividend.*US Tax"
+value = "Expenses:Taxes"
+
+[xsv_to_ledger_record.source_posting.price.exclude]
+[[xsv_to_ledger_record.source_posting.price.exclude.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.exclude.conditions.content]
+column = 5              # IBKR:TransactionType
+value = "Buy"
+operation = "equal"
+
+[xsv_to_ledger_record.source_posting.price.amount]
+[xsv_to_ledger_record.source_posting.price.amount.quantity]
+[xsv_to_ledger_record.source_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [10]
+
+[[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions.content]
+column = 5              # IBKR:Quantity
+value = "Deposit"
+operation = "equal"
+
+[[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions.content]
+column = 5              # IBKR:Quantity
+value = "Credit Interest"
+operation = "equal"
+
+[[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions.content]
+column = 5              # IBKR:Quantity
+value = "Foreign Tax Withholding"
+operation = "equal"
+
+
+[xsv_to_ledger_record.source_posting.price.amount.commodity]
+[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [10]
+
+[[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
+key= ".*"
+value= "USD"
