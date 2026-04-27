@@ -38,7 +38,7 @@ value = "Expenses:Entertainment"
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key = """\
     NISA LOCAL|OCADO|TESCO|MARKS (&|AND)|M&S|BEST FOODS|SAINSBURY|GRAINMILL|WAITROSE|KERALATASTE|ATHLETIC GREENS|THE HAMPSTEAD BUTCHER|\
-    NAYAXAU|SP LAKSHMI STORES UK|CO-OP|1164 Cherry Tree Walk\
+    NAYAXAU|SP LAKSHMI STORES UK|CO-OP|ALDI |1164 Cherry Tree Walk\
     """
 value = "Expenses:Groceries"
 
@@ -64,7 +64,7 @@ value = "Expenses:Donations"
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key = """WWW.LOCRATING.COM|WH SMITH RETAIL|NORD|GENTLE HAIR DYE|AMAZON|\
     DISNEY PLUS|CLAUDE.AI SUBSCRIPTION  SAN FRANCISCO|\
-    AMZN|PRIMARK|Apple|Justpark|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree"""
+    AMZN|PRIMARK|Apple|Justpark|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree|VPN"""
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]

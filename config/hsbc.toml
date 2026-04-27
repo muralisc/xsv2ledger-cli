@@ -73,7 +73,11 @@ key = "HMRC SELF AS"
 value = "Expenses:Taxes"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "DEPOSIT BOND "
+key = "Tinkys Day Nursery nursery"
+value = "Expenses:Education"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key = "DEPOSIT BOND |DPST BOND MATURITY"
 value = "Assets:Bank:HSBC:Fixed"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
