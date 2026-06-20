@@ -1,0 +1,11 @@
+              3 GOOG
+             10 META
+             USD2223  Assets:Investments:CharlesSchwab
+             USD2223    Cash
+              3 GOOG    GOOG
+             10 META    Meta
+            -15 META  Income:Facebook:RSU
+--------------------
+              3 GOOG
+             -5 META
+             USD2223

@@ -1,0 +1,9 @@
+While parsing file "test/expected/hsbc.ledger", line 12:
+While balancing transaction from "test/expected/hsbc.ledger", lines 11-12:
+> 2005-02-19 * "HOGWARTS UK LIMITE CR"
+>         Assets:Bank:HSBC:Savings        6,429.50 GBP
+Unbalanced remainder is:
+        6,429.50 GBP
+Amount to balance against:
+        6,429.50 GBP
+Error: Transaction does not balance

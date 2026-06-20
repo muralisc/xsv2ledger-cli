@@ -1,0 +1,24 @@
+       -23828.05 GBP
+         85.76 VFTSE
+            123 VUSA  Assets
+        -3828.05 GBP
+         85.76 VFTSE
+            123 VUSA    Investments:Fidelity
+        -3828.60 GBP
+         85.76 VFTSE
+            123 VUSA      ISA
+        -3828.60 GBP        Cash
+         85.76 VFTSE        Ftse100
+            123 VUSA        VUSA
+            0.55 GBP      InvestmentAccount:Cash
+       -20000.00 GBP    WireTransfer:HSBC_FIDELITY
+           14.22 GBP  Expenses:Investments:Fidelity:Fees
+         -137.80 GBP  Income:Fidelity
+         -137.25 GBP    ISA
+          -61.75 GBP      Cash:Interest
+          -75.50 GBP      VUSA:Divident
+           -0.55 GBP    InvestmentAccount:Cash:Interest
+--------------------
+       -23951.63 GBP
+         85.76 VFTSE
+            123 VUSA

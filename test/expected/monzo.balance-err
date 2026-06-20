@@ -1,0 +1,9 @@
+While parsing file "test/expected/monzo.ledger", line 64:
+While balancing transaction from "test/expected/monzo.ledger", lines 63-64:
+> 2022-10-30 * "SURESXXXXXXX"
+>         Assets:Bank:Monzo        2500.00 GBP
+Unbalanced remainder is:
+         2500.00 GBP
+Amount to balance against:
+         2500.00 GBP
+Error: Transaction does not balance
