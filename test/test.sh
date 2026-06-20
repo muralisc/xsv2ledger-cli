@@ -8,7 +8,7 @@ cargo run -- --transactions-csv test/test_xsv/monzo.csv --config config/monzo.to
 \ledger b --permissive -f test/expected/monzo.ledger
 
 
-cargo run -- --config config/schwab-trades.toml --transactions-csv test/test_xsv/schwab-trades.csv| diff test/expected/schwab-trades.ledger -
+cargo run -- --config config/schwab-trades-and-security_transfers.toml --transactions-csv test/test_xsv/schwab-trades.csv| diff test/expected/schwab-trades.ledger -
 \ledger b --permissive -f test/expected/schwab-trades.ledger
 
 cargo run -- --config config/amex.toml --transactions-csv test/test_xsv/amex.csv| diff test/expected/amex.ledger -
