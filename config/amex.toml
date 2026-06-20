@@ -11,8 +11,8 @@ value = "Date"
 operation = "contains"
 
 [xsv_to_ledger_record.date]
-date_format="%d/%m/%Y"
-date_regex='\d{2}/\d{2}/\d{4}'
+date_format = "%d/%m/%Y"
+date_regex = '\d{2}/\d{2}/\d{4}'
 column = 0
 
 [xsv_to_ledger_record.payee]
@@ -44,7 +44,8 @@ value = "Expenses:Groceries"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = """\
-    IRCTC|BOOKING.COM|VFS Global Services Mumbai|TFL TRAVEL|TRAVEL UP|\
+    IRCTC|BOOKING.COM|VFS Global Services Mumbai|\
+    TFL TRAVEL|TRAVEL UP|\
     LUL TICKET MACHINE|\
     Airways|OYSTERCARD|UBER|LONDON WATERBUS|TFL GOODWILL"""
 value = "Expenses:Transport"
@@ -62,10 +63,29 @@ key_regex = "WIKIPEDIA GIFT"
 value = "Expenses:Donations"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = """WWW.LOCRATING.COM|WH SMITH RETAIL|NORD|GENTLE HAIR DYE|ITS PURE|AMAZON|\
-    DISNEY PLUS|CLAUDE.AI SUBSCRIPTION  SAN FRANCISCO|\
-    YOUTUBE|\
-    AMZN|PRIMARK|Apple|Justpark|ANTHROPIC|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree|VPN"""
+key_regex_list = [
+  "WWW.LOCRATING.COM",
+  "WH SMITH RETAIL",
+  "NORD",
+  "GENTLE HAIR DYE",
+  "ITS PURE",
+  "AMAZON",
+  "AMZN",
+  "DISNEY PLUS",
+  "YOUTUBE",
+  "CLAUDE.AI SUBSCRIPTION  SAN FRANCISCO",
+  "ANTHROPIC",
+  "PRIMARK",
+  "Apple",
+  "Justpark",
+  "FISH",
+  "LEBARA",
+  "DOXZOO",
+  "HPI INSTANT INK",
+  "EAGERDRINKS",
+  "Laduree",
+  "VPN",
+]
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
@@ -85,7 +105,7 @@ value = "Expenses:Amex:Interest"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "POST OFFICE"
-value= "Assets:Bank:PostOfficeTravelMoneyCard"
+value = "Assets:Bank:PostOfficeTravelMoneyCard"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "PAYMENT RECEIVED"
@@ -103,7 +123,7 @@ hint_columns = [2]
 
 [[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
 key_regex = ".*"
-value= "GBP"
+value = "GBP"
 
 [xsv_to_ledger_record.source_posting]
 [xsv_to_ledger_record.source_posting.account]
@@ -112,5 +132,4 @@ hint_columns = [2]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = ".*"
-value= "Assets:Bank:Amex"
-
+value = "Assets:Bank:Amex"
