@@ -4,7 +4,7 @@ use tracing::debug;
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Mapping {
-    pub key: String,
+    pub key_regex: String,
     pub value: String,
 }
 
@@ -33,7 +33,7 @@ impl XsvToEntry {
             .join(" | ");
         if let Some(mapping) = &self.hint_mapping {
             for item in mapping {
-                let re = RegexBuilder::new(&format!(r"{}", item.key))
+                let re = RegexBuilder::new(&format!(r"{}", item.key_regex))
                     .case_insensitive(true)
                     .build()
                     .unwrap();
@@ -41,13 +41,13 @@ impl XsvToEntry {
                     Some(mat) => {
                         debug!(
                             "Match for value: {:?} hint: {:?}, value: {:?}",
-                            mat, item.key, item.value
+                            mat, item.key_regex, item.value
                         );
                         return item.value.to_string();
                     }
                     None => debug!(
                         "First account mapped to None for hint {:?} for regex {:?}",
-                        hint_string, item.key
+                        hint_string, item.key_regex
                     ),
                 }
             }

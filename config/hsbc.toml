@@ -27,7 +27,7 @@ hint_columns = [1]
 
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= ".*"
+key_regex = ".*"
 value= "Assets:Bank:HSBC:Savings"
 
 [xsv_to_ledger_record.target_posting.price.amount]
@@ -40,7 +40,7 @@ hint_columns = [2]
 hint_columns = [2]
 
 [[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= ".*"
+key_regex = ".*"
 value= "GBP"
 
 [xsv_to_ledger_record.source_posting]
@@ -49,64 +49,64 @@ value= "GBP"
 hint_columns = [1]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "TESCO"
+key_regex = "TESCO"
 value = "Expenses:Groceries"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "AMERICAN EXP"
+key_regex = "AMERICAN EXP"
 value = "Liabilities:Amex:BACreditCard"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "AMZNMktplace|AMAZON.CO.UK|Amazon Prime"
+key_regex = "AMZNMktplace|AMAZON.CO.UK|Amazon Prime"
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "FIDELITY.CO.UK TADWORTH VIS"
+key_regex = "FIDELITY.CO.UK TADWORTH VIS"
 value = "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "STRIPE DD|STRIPE FIRST PAYMENT DD"
+key_regex = "STRIPE DD|STRIPE FIRST PAYMENT DD"
 value = "Expenses:Housing"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "HMRC SELF AS"
+key_regex = "HMRC SELF AS"
 value = "Expenses:Taxes"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Tinkys Day Nursery nursery"
+key_regex = "Tinkys Day Nursery nursery"
 value = "Expenses:Education"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "DEPOSIT BOND |DPST BOND MATURITY"
+key_regex = "DEPOSIT BOND |DPST BOND MATURITY"
 value = "Assets:Bank:HSBC:Fixed"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "FACEBOOK UK"
+key_regex = "FACEBOOK UK"
 value = "Income:Facebook:Salary"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 # transfers FROM Monzo
-key = "M Sureshchandran CR|M Sureshchandran Murali Sureshchand CR"
+key_regex = "M Sureshchandran CR|M Sureshchandran Murali Sureshchand CR"
 value = "Assets:WireTransfer:MONZO_HSBC"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Remitly U.K."
+key_regex = "Remitly U.K."
 value = "Assets:WireTransfer:REMITLY_HSBC"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 # transfers TO Monzo
-key = "MURALI SURESH TRANSFER FROM HSBC SO"
+key_regex = "MURALI SURESH TRANSFER FROM HSBC SO"
 value = "Assets:WireTransfer:MONZO_HSBC"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Remitly UK|M Sureshchandran pis"
+key_regex = "Remitly UK|M Sureshchandran pis"
 value = "Assets:WireTransfer:REMITLY_HSBC"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "GROSS INTEREST TO "
+key_regex = "GROSS INTEREST TO "
 value = "Income:HSBC:Interest"
 
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "FASL PRIM CLIENT B"
+key_regex = "FASL PRIM CLIENT B"
 value = "Assets:WireTransfer:HSBC_FIDELITY"

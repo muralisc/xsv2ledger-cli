@@ -68,39 +68,39 @@ hint_columns = [2]      # Transaction type, Investments
 hint_columns = [2,3,4]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "Cash In Lump"
+key_regex = "Cash In Lump"
 value= "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Interest.*Investment ISA"
+key_regex = "Cash Interest.*Investment ISA"
 value = "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Interest.*Investment Account"
+key_regex = "Cash Interest.*Investment Account"
 value = "Assets:Investments:Fidelity:InvestmentAccount:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Interest.*Cash Management"
+key_regex = "Cash Interest.*Cash Management"
 value = "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Vanguard FTSE 100 Index Unit Trust GBP Acc"
+key_regex = "Vanguard FTSE 100 Index Unit Trust GBP Acc"
 value = "Assets:Investments:Fidelity:ISA:Ftse100"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "VANGUARD FUNDS PLC, S&P 500 UCITS ETF USD DIS"
+key_regex = "VANGUARD FUNDS PLC, S&P 500 UCITS ETF USD DIS"
 value = "Assets:Investments:Fidelity:ISA:VUSA"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Tax.*Investment Account"
+key_regex = "Tax.*Investment Account"
 value = "Assets:Investments:Fidelity:InvestmentAccount:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Dividend.*Investment ISA"
+key_regex = "Cash Dividend.*Investment ISA"
 value = "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Transfer To Cash Management Account For Fee.*Investment ISA"
+key_regex = "Transfer To Cash Management Account For Fee.*Investment ISA"
 value = "Expenses:Investments:Fidelity:Fees"
 
 [xsv_to_ledger_record.target_posting.price.amount]
@@ -113,15 +113,15 @@ hint_columns = [8]
 hint_columns = [3]
 
 [[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "Cash"
+key_regex = "Cash"
 value= "GBP"
 
 [[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "Vanguard FTSE 100 Index Unit Trust GBP Acc"
+key_regex = "Vanguard FTSE 100 Index Unit Trust GBP Acc"
 value= "VFTSE"
 
 [[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "VANGUARD FUNDS PLC, S&P 500 UCITS ETF USD DIS"
+key_regex = "VANGUARD FUNDS PLC, S&P 500 UCITS ETF USD DIS"
 value= "VUSA"
 
 
@@ -136,7 +136,7 @@ hint_columns = [9]
 hint_columns = [2]
 
 [[xsv_to_ledger_record.target_posting.price.cost_amount.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "Buy"
+key_regex = "Buy"
 value= "GBP"
 
 [xsv_to_ledger_record.target_posting.price.cost_amount.exclude]
@@ -161,41 +161,41 @@ operation = "equal"
 hint_columns = [2,3,4,6]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key= "Cash In Lump"
+key_regex = "Cash In Lump"
 value= "Assets:WireTransfer:HSBC_FIDELITY"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Interest.*Investment ISA"
+key_regex = "Cash Interest.*Investment ISA"
 value = "Income:Fidelity:ISA:Cash:Interest"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Interest.*Investment Account"
+key_regex = "Cash Interest.*Investment Account"
 value = "Income:Fidelity:InvestmentAccount:Cash:Interest"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Interest.*Cash Management"
+key_regex = "Cash Interest.*Cash Management"
 value = "Income:Fidelity:ISA:Cash:Interest"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Vanguard FTSE.*Investment ISA"
+key_regex = "Vanguard FTSE.*Investment ISA"
 value = "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key= "Buy.*VANGUARD FUNDS PLC, S&P 500 UCITS ETF USD DIS"
+key_regex = "Buy.*VANGUARD FUNDS PLC, S&P 500 UCITS ETF USD DIS"
 value = "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Tax On Interest"
+key_regex = "Tax On Interest"
 value = "Expenses:Fidelity:TaxOnInterest"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Dividend.*AAPL"
+key_regex = "Cash Dividend.*AAPL"
 value = "Income:Fidelity:ISA:AAPL:Divident"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Dividend.*VUSA"
+key_regex = "Cash Dividend.*VUSA"
 value = "Income:Fidelity:ISA:VUSA:Divident"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Transfer To Cash Management Account For Fee.*Investment ISA"
+key_regex = "Transfer To Cash Management Account For Fee.*Investment ISA"
 value = "Assets:Investments:Fidelity:ISA:Cash"

@@ -37,19 +37,19 @@ hint_columns = [1,2,3]
 hint_columns = [1,2]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Sell.*META"
+key_regex = "Sell.*META"
 value = "Assets:Investments:CharlesSchwab:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Stock Plan Activity.*META"
+key_regex = "Stock Plan Activity.*META"
 value = "Assets:Investments:CharlesSchwab:Meta"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "GOOG"
+key_regex = "GOOG"
 value = "Assets:Investments:CharlesSchwab:GOOG"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "CSTNL"
+key_regex = "CSTNL"
 value = "Assets:Investments:CharlesSchwab:CSTNL"
 
 [xsv_to_ledger_record.target_posting.price.exclude]
@@ -80,7 +80,7 @@ hint_columns = [5]
 hint_columns = [5]
 
 [[xsv_to_ledger_record.target_posting.price.cost_amount.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "$"
+key_regex = "$"
 value= "USD"
 
 [xsv_to_ledger_record.target_posting.price.cost_amount.exclude]
@@ -97,19 +97,19 @@ operation = "equal"
 hint_columns = [1,2]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Security Transfer"
+key_regex = "Security Transfer"
 value = "Assets:WireTransfer:SCHWAB_IBKR"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Stock Plan Activity"
+key_regex = "Stock Plan Activity"
 value = "Income:Facebook:RSU"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Buy"
+key_regex = "Buy"
 value = "Assets:Investments:CharlesSchwab:Cash"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Sell.*META"
+key_regex = "Sell.*META"
 value = "Assets:Investments:CharlesSchwab:Meta"
 
 [xsv_to_ledger_record.source_posting.price.exclude]
@@ -161,7 +161,7 @@ hint_columns = [5]
 hint_columns = [5]
 
 [[xsv_to_ledger_record.source_posting.price.cost_amount.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "$"
+key_regex = "$"
 value= "USD"
 
 [xsv_to_ledger_record.source_posting.price.cost_amount.exclude]

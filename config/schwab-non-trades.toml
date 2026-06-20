@@ -29,19 +29,19 @@ hint_columns = [1,2,3]
 hint_columns = [1,2]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Credit Interest"
+key_regex = "Credit Interest"
 value = "Income:Schwab:Interest"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Dividend"
+key_regex = "Dividend"
 value = "Income:Schwab:Interest"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Tax Adj"
+key_regex = "Tax Adj"
 value = "Expenses:Schwab:Tax"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Security Transfer"
+key_regex = "Security Transfer"
 value = "Assets:WireTransfer:SCHWAB_IBKR"
 
 [xsv_to_ledger_record.source_posting]
@@ -51,7 +51,7 @@ hint_columns = [1,2,3]
 
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = ".*"
+key_regex = ".*"
 value = "Assets:Investments:CharlesSchwab:Cash"
 
 [xsv_to_ledger_record.source_posting.price.amount.quantity.xsv_to_entry]
@@ -61,5 +61,5 @@ hint_columns = [7]
 hint_columns = [7]
 
 [[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "$"
+key_regex = "$"
 value= "USD"
