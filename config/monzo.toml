@@ -30,7 +30,7 @@ hint_columns = [4]
 hint_columns = [4]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= ".*"
+key_regex = ".*"
 value= "Assets:Bank:Monzo"
 
 [xsv_to_ledger_record.target_posting.price.amount]
@@ -48,83 +48,83 @@ hint_columns = [8]
 hint_columns = [3,4,14]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Stitch Fix|Kprepublic"
+key_regex = "Stitch Fix|Kprepublic"
 value = "Expenses:Posessions"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = """Uber$|Postofficetravel|Transport for London|Railcard|Vehicle Licensing Agency|Safe Driving For Life|Travel Up|\
+key_regex = """Uber$|Postofficetravel|Transport for London|Railcard|Vehicle Licensing Agency|Safe Driving For Life|Travel Up|\
     Lul Ticket"""
 value = "Expenses:Transport"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "UK Visas & Immigration|Oyster|AA Driving School|Pramod Khatti"
+key_regex = "UK Visas & Immigration|Oyster|AA Driving School|Pramod Khatti"
 value = "Expenses:Transport"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = """Digital Ocean|Hyperoptic|Amazon|Metropolitan Infrastru|Virgin Media|\
+key_regex = """Digital Ocean|Hyperoptic|Amazon|Metropolitan Infrastru|Virgin Media|\
     Golden Scissors|\
     Lebara|Scottish Power|Royal Mail|Spotify|Better UK"""
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = """Moogoo EU|Post Office|UPS LTD|godaddy|JustPark|Vintage Scisso|Metropolitan|\
+key_regex = """Moogoo EU|Post Office|UPS LTD|godaddy|JustPark|Vintage Scisso|Metropolitan|\
     Manorama Products|Octopus Energy|Card Payment.*ATM|COMANCO|monzo_paid"""
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "AMERICAN EXP"
+key_regex = "AMERICAN EXP"
 value = "Liabilities:Amex:BACreditCard"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "L&Q|Barnet|Locrating|Direct Debit.*Stripe"
+key_regex = "L&Q|Barnet|Locrating|Direct Debit.*Stripe"
 value = "Expenses:Housing"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Hoppers|deliveroo|Netflix|ODEON|Burger King|Crown Cafe Bar|Costa Coffee|Uber Eats|Thrillophilia|OnlyFans"
+key_regex = "Hoppers|deliveroo|Netflix|ODEON|Burger King|Crown Cafe Bar|Costa Coffee|Uber Eats|Thrillophilia|OnlyFans"
 value = "Expenses:Entertainment"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Champ De Mars|Airbnb|Sonyliv|Pi Hut|Facebook Kings Cro|Lemonia"
+key_regex = "Champ De Mars|Airbnb|Sonyliv|Pi Hut|Facebook Kings Cro|Lemonia"
 value = "Expenses:Entertainment"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Optometrist|Christian Art|Royal Free London|H.a. Mcparland Ltd"
+key_regex = "Optometrist|Christian Art|Royal Free London|H.a. Mcparland Ltd"
 value = "Expenses:Health"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key= "Sree Sobha Dharmarajan|Better"
+key_regex = "Sree Sobha Dharmarajan|Better"
 value =  "Expenses:Allowance"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Colindale Local|Kingsbury Fruit|Sainsbury|Sp Lakshmi Stores"
+key_regex = "Colindale Local|Kingsbury Fruit|Sainsbury|Sp Lakshmi Stores"
 value = "Expenses:Groceries"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "preply"
+key_regex = "preply"
 value = "Expenses:Education"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "AMERICAN EXP"
+key_regex = "AMERICAN EXP"
 value = "Liabilities:Amex:BACreditCard"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 # for HSBC
-key= "Murali Sureshchandran"
+key_regex = "Murali Sureshchandran"
 value= "Assets:WireTransfer:MONZO_HSBC"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 # for Fidelity
-key= "Fidelity"
+key_regex = "Fidelity"
 value= "Assets:WireTransfer:MONZO_FIDELITY"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key= "Sree Sobha Dharmarajan"
+key_regex = "Sree Sobha Dharmarajan"
 value =  "Income:LivingShare"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key= "SURESHCHANDR"
+key_regex = "SURESHCHANDR"
 value= "Assets:WireTransfer:MONZO_HSBC"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key= "IBKR"
+key_regex = "IBKR"
 value= "Assets:WireTransfer:MONZO_IBKR"

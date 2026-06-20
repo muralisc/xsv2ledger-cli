@@ -44,31 +44,31 @@ hint_columns = [2]      # Transaction type, Investments
 hint_columns = [2]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "SB:5153341817:Int|Int on SB AC"
+key_regex = "SB:5153341817:Int|Int on SB AC"
 value= "Income:Axis:Interest"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "C247522972/TATA AIA LIFE INSURANCE"
+key_regex = "C247522972/TATA AIA LIFE INSURANCE"
 value= "Assets:Investments:TataSmartPlusInsurance"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "MrMURALI/STATEBAN"
+key_regex = "MrMURALI/STATEBAN"
 value= "Assets:WireTransfer:SBI_AXIS"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "Ac xfr from"
+key_regex = "Ac xfr from"
 value= "Assets:WireTransfer:AXIS_AXIS"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "AMAZON PAY|ICONN REF"
+key_regex = "AMAZON PAY|ICONN REF"
 value= "Expenses:Posessions"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "SPRING GARDEN HEA"
+key_regex = "SPRING GARDEN HEA"
 value = "Expenses:Health"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key= "IDEAL HOME APPLIA/THIRUVANANTHA"
+key_regex = "IDEAL HOME APPLIA/THIRUVANANTHA"
 value = "Expenses:Posessions"
 
 [xsv_to_ledger_record.target_posting.price.amount]
@@ -81,7 +81,7 @@ hint_columns = [3]
 hint_columns = [3]
 
 [[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= ".*"
+key_regex = ".*"
 value= "INR"
 
 [xsv_to_ledger_record.target_posting.price.exclude]
@@ -98,7 +98,7 @@ operation = "equal"
 hint_columns = [2]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key= ".*"
+key_regex = ".*"
 value= "Assets:Bank:Axis:Savings"
 
 [xsv_to_ledger_record.source_posting.price.amount]
@@ -111,7 +111,7 @@ hint_columns = [4]
 hint_columns = [4]
 
 [[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= ".*"
+key_regex = ".*"
 value= "INR"
 
 [xsv_to_ledger_record.source_posting.price.exclude]

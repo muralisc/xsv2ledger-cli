@@ -46,27 +46,27 @@ hint_columns = [4, 5, 6]
 hint_columns = [4, 5, 6]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Electronic Fund Transfer|Cash Transfer"
+key_regex = "Electronic Fund Transfer|Cash Transfer"
 value = "Assets:Investments:IBKR:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "NVDA.*Cash Dividend|VOO.*Cash Dividend|GOOG.*Cash Dividend"
+key_regex = "NVDA.*Cash Dividend|VOO.*Cash Dividend|GOOG.*Cash Dividend"
 value = "Assets:Investments:IBKR:Cash:USD"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Buy.*VUAG"
+key_regex = "Buy.*VUAG"
 value = "Assets:Investments:IBKR:VUAG"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Buy.*VOO"
+key_regex = "Buy.*VOO"
 value = "Assets:Investments:IBKR:VOO"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "Buy.*NVDA"
+key_regex = "Buy.*NVDA"
 value = "Assets:Investments:IBKR:NVDA"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "USD Credit Interest|FX Translations"
+key_regex = "USD Credit Interest|FX Translations"
 value = "Assets:Investments:IBKR:Cash:USD"
 
 [xsv_to_ledger_record.target_posting.price.exclude]
@@ -87,7 +87,7 @@ hint_columns = [7]
 hint_columns = [6]
 
 [[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= "-"
+key_regex = "-"
 value= "USD"
 
 [xsv_to_ledger_record.target_posting.price.cost_amount]
@@ -114,31 +114,31 @@ operation = "equal"
 hint_columns = [4, 5, 6]
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Electronic Fund Transfer"
+key_regex = "Electronic Fund Transfer"
 value= "Assets:WireTransfer:MONZO_IBKR"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Cash Transfer"
+key_regex = "Cash Transfer"
 value= "Assets:WireTransfer:SCHWAB_IBKR"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Buy.*VUAG"
+key_regex = "Buy.*VUAG"
 value = "Assets:Investments:IBKR:Cash:GBP"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "Buy.*VOO|Buy.*NVDA"
+key_regex = "Buy.*VOO|Buy.*NVDA"
 value = "Assets:Investments:IBKR:Cash:USD"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "USD Credit Interest"
+key_regex = "USD Credit Interest"
 value = "Income:IBKR:Interest"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "NVDA.*Cash Dividend.*Ordinary Dividend|VOO.*Cash Dividend.*Ordinary Dividend|GOOG.*Cash Dividend.*Ordinary Dividend"
+key_regex = "NVDA.*Cash Dividend.*Ordinary Dividend|VOO.*Cash Dividend.*Ordinary Dividend|GOOG.*Cash Dividend.*Ordinary Dividend"
 value = "Income:IBKR:Dividend"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key = "NVDA.*Cash Dividend.*US Tax|VOO.*Cash Dividend.*US Tax|GOOG.*Cash Dividend.*US Tax"
+key_regex = "NVDA.*Cash Dividend.*US Tax|VOO.*Cash Dividend.*US Tax|GOOG.*Cash Dividend.*US Tax"
 value = "Expenses:Taxes"
 
 [xsv_to_ledger_record.source_posting.price.exclude]
@@ -181,5 +181,5 @@ operation = "equal"
 hint_columns = [10]
 
 [[xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key= ".*"
+key_regex = ".*"
 value= "USD"
