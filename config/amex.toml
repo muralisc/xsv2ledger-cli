@@ -50,7 +50,7 @@ key = """\
 value = "Expenses:Transport"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key = "BOOTS|BARBER|OURARING|THRIVA|VINTAGE SCISSORS|ROYAL FREE HOSPITAL|MEDELA UK"
+key = "BOOTS|BARBER|OURARING|THRIVA|AG PHYSIOPLUS|VINTAGE SCISSORS|ROYAL FREE HOSPITAL|MEDELA UK"
 value = "Expenses:Health"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
@@ -65,7 +65,7 @@ value = "Expenses:Donations"
 key = """WWW.LOCRATING.COM|WH SMITH RETAIL|NORD|GENTLE HAIR DYE|ITS PURE|AMAZON|\
     DISNEY PLUS|CLAUDE.AI SUBSCRIPTION  SAN FRANCISCO|\
     YOUTUBE|\
-    AMZN|PRIMARK|Apple|Justpark|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree|VPN"""
+    AMZN|PRIMARK|Apple|Justpark|ANTHROPIC|FISH|LEBARA|DOXZOO|HPI INSTANT INK|EAGERDRINKS|Laduree|VPN"""
 value = "Expenses:Utilities"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
