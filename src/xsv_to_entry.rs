@@ -76,6 +76,7 @@ impl XsvToEntry {
                     ),
                 }
             }
+            panic!("No mapping found for hint: {hint_string}");
         }
         return hint_string;
     }
@@ -151,9 +152,10 @@ mod tests {
     }
 
     #[test]
-    fn get_string_mapping_miss_returns_hint() {
+    #[should_panic(expected = "No mapping found for hint")]
+    fn get_string_mapping_miss_panics() {
         let e = entry(vec![0], Some(vec![mapping("xyz", "Expenses:Food")]));
-        assert_eq!(e.get_string(&rec(&["hello"])), "hello");
+        e.get_string(&rec(&["hello"]));
     }
 
     #[test]

@@ -1,0 +1,7 @@
+; vim:ft=ledger
+; vim:set tw=200
+2025-01-01 * "Supermarket"
+        Expenses:Groceries        30.00 GBP
+        Assets:Bank:Test
+
+2025-01-01 * "Unknown Shop"

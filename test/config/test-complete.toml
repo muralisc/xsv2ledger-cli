@@ -1,0 +1,47 @@
+has_headers = true
+delimiter = "comma"
+
+[exclude]
+[[exclude.conditions]]
+type = "RecordLen"
+content = 1
+
+[xsv_to_ledger_record.date]
+date_format = "%d/%m/%Y"
+date_regex = '\d{2}/\d{2}/\d{4}'
+column = 0
+
+[xsv_to_ledger_record.payee]
+[xsv_to_ledger_record.payee.xsv_to_entry]
+hint_columns = [1]
+
+[xsv_to_ledger_record.target_posting]
+[xsv_to_ledger_record.target_posting.account]
+[xsv_to_ledger_record.target_posting.account.xsv_to_entry]
+hint_columns = [1]
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Supermarket"
+value = "Expenses:Groceries"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Unknown Shop"
+value = "Expenses:Other"
+
+[xsv_to_ledger_record.target_posting.price.amount]
+[xsv_to_ledger_record.target_posting.price.amount.quantity]
+[xsv_to_ledger_record.target_posting.price.amount.quantity.xsv_to_entry]
+hint_columns = [2]
+
+[xsv_to_ledger_record.target_posting.price.amount.commodity]
+[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry]
+hint_columns = [3]
+
+[xsv_to_ledger_record.source_posting]
+[xsv_to_ledger_record.source_posting.account]
+[xsv_to_ledger_record.source_posting.account.xsv_to_entry]
+hint_columns = [1]
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = ".*"
+value = "Assets:Bank:Test"
