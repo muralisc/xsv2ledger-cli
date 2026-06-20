@@ -54,3 +54,47 @@ impl Amount {
         );
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::condition_types::ConditionTypes;
+    use crate::invert_sign::InvertSign;
+    use crate::xsv_to_entry::XsvToEntry;
+
+    fn xsv(col: usize) -> XsvToEntry {
+        XsvToEntry { hint_columns: vec![col], hint_mapping: None }
+    }
+
+    fn always_invert() -> InvertSign {
+        InvertSign { conditions: vec![ConditionTypes::RecordLen(1)] }
+    }
+
+    fn rec(field: &str) -> csv::StringRecord {
+        csv::StringRecord::from(vec![field])
+    }
+
+    #[test]
+    fn no_invert_strips_dollar() {
+        let q = Quantity { invert_sign: None, xsv_to_entry: xsv(0) };
+        assert_eq!(q.get_string(&rec("$100.00")), "100.00");
+    }
+
+    #[test]
+    fn invert_positive_to_negative() {
+        let q = Quantity { invert_sign: Some(always_invert()), xsv_to_entry: xsv(0) };
+        assert_eq!(q.get_string(&rec("100.00")), "-100.00");
+    }
+
+    #[test]
+    fn invert_negative_to_positive() {
+        let q = Quantity { invert_sign: Some(always_invert()), xsv_to_entry: xsv(0) };
+        assert_eq!(q.get_string(&rec("-100.00")), "100.00");
+    }
+
+    #[test]
+    fn invert_leading_plus_to_negative() {
+        let q = Quantity { invert_sign: Some(always_invert()), xsv_to_entry: xsv(0) };
+        assert_eq!(q.get_string(&rec("+100.00")), "-100.00");
+    }
+}

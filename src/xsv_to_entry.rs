@@ -80,3 +80,85 @@ impl XsvToEntry {
         return hint_string;
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn mapping(key_regex: &str, value: &str) -> Mapping {
+        Mapping {
+            key_regex: Some(key_regex.to_string()),
+            key_regex_list: None,
+            key_regex_file: None,
+            value: value.to_string(),
+        }
+    }
+
+    fn entry(cols: Vec<usize>, maps: Option<Vec<Mapping>>) -> XsvToEntry {
+        XsvToEntry { hint_columns: cols, hint_mapping: maps }
+    }
+
+    fn rec(fields: &[&str]) -> csv::StringRecord {
+        csv::StringRecord::from(fields.to_vec())
+    }
+
+    #[test]
+    fn build_pattern_key_regex() {
+        let m = Mapping {
+            key_regex: Some("foo|bar".to_string()),
+            key_regex_list: None,
+            key_regex_file: None,
+            value: "v".to_string(),
+        };
+        assert_eq!(m.build_pattern(), "foo|bar");
+    }
+
+    #[test]
+    fn build_pattern_key_regex_list() {
+        let m = Mapping {
+            key_regex: None,
+            key_regex_list: Some(vec!["foo".to_string(), "bar".to_string()]),
+            key_regex_file: None,
+            value: "v".to_string(),
+        };
+        assert_eq!(m.build_pattern(), "foo|bar");
+    }
+
+    #[test]
+    fn build_pattern_key_regex_file() {
+        let path = std::env::temp_dir().join("xsv2ledger_test_key_regex_file.txt");
+        std::fs::write(&path, "# comment\nfoo\n\nbar\n").unwrap();
+        let m = Mapping {
+            key_regex: None,
+            key_regex_list: None,
+            key_regex_file: Some(path.to_str().unwrap().to_string()),
+            value: "v".to_string(),
+        };
+        assert_eq!(m.build_pattern(), "foo|bar");
+        std::fs::remove_file(&path).ok();
+    }
+
+    #[test]
+    fn get_string_no_mapping_returns_hint() {
+        let e = entry(vec![0, 1], None);
+        assert_eq!(e.get_string(&rec(&["hello", "world"])), "hello | world");
+    }
+
+    #[test]
+    fn get_string_mapping_hit_returns_value() {
+        let e = entry(vec![0], Some(vec![mapping("hello", "Expenses:Food")]));
+        assert_eq!(e.get_string(&rec(&["hello"])), "Expenses:Food");
+    }
+
+    #[test]
+    fn get_string_mapping_miss_returns_hint() {
+        let e = entry(vec![0], Some(vec![mapping("xyz", "Expenses:Food")]));
+        assert_eq!(e.get_string(&rec(&["hello"])), "hello");
+    }
+
+    #[test]
+    fn get_string_strips_newlines_in_column() {
+        let e = entry(vec![0], None);
+        assert_eq!(e.get_string(&rec(&["hello\nworld"])), "helloworld");
+    }
+}

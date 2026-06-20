@@ -26,3 +26,28 @@ impl Date {
         return date.to_string();
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn date(format: &str, regex: &str) -> Date {
+        Date { column: 0, date_format: format.to_string(), date_regex: regex.to_string() }
+    }
+
+    fn rec(field: &str) -> csv::StringRecord {
+        csv::StringRecord::from(vec![field])
+    }
+
+    #[test]
+    fn formats_date() {
+        let d = date("%d/%m/%Y", r"\d{2}/\d{2}/\d{4}");
+        assert_eq!(d.get_string(&rec("30/10/2022")), "2022-10-30");
+    }
+
+    #[test]
+    fn extracts_date_from_noisy_string() {
+        let d = date("%d/%m/%Y", r"\d{2}/\d{2}/\d{4}");
+        assert_eq!(d.get_string(&rec("Date: 30/10/2022 (extra)")), "2022-10-30");
+    }
+}
