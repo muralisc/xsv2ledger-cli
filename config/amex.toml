@@ -100,6 +100,10 @@ key_regex = """\
 value = "Expenses:Posessions"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "TASKRABBIT"
+value = "Expenses:Utilities"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "MEMBERSHIP FEE|INTEREST CHARGE"
 value = "Expenses:Amex:Interest"
 

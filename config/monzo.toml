@@ -128,3 +128,7 @@ value= "Assets:WireTransfer:MONZO_HSBC"
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "IBKR"
 value= "Assets:WireTransfer:MONZO_IBKR"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Richard Thompson"
+value= "Income:Posessions"
