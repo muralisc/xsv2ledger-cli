@@ -96,7 +96,7 @@ key_regex = "Sree Sobha Dharmarajan|Better"
 value =  "Expenses:Allowance"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = "Colindale Local|Kingsbury Fruit|Sainsbury|Sp Lakshmi Stores"
+key_regex = "Colindale Local|Kingsbury Fruit|Sainsbury|Sp Lakshmi Stores|Jks Mini Mart"
 value = "Expenses:Groceries"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
