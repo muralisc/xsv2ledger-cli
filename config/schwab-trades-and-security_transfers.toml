@@ -37,6 +37,18 @@ hint_columns = [1,2,3]
 hint_columns = [1,2]
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Security Transfer.*NVDA"
+value = "Assets:Investments:CharlesSchwab:NVDA"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Security Transfer.*MSFT"
+value = "Assets:Investments:CharlesSchwab:MSFT"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Security Transfer.*AMZN"
+value = "Assets:Investments:CharlesSchwab:AMZN"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Sell.*META"
 value = "Assets:Investments:CharlesSchwab:Cash"
 
