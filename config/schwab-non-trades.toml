@@ -38,7 +38,7 @@ value = "Income:Schwab:Interest"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Tax Adj"
-value = "Expenses:Schwab:Tax"
+value = "Taxes:Schwab"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Security Transfer"
