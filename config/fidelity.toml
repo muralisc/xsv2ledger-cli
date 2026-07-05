@@ -187,7 +187,7 @@ value = "Assets:Investments:Fidelity:ISA:Cash"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Tax On Interest"
-value = "Expenses:Fidelity:TaxOnInterest"
+value = "Taxes:Fidelity:OnInterest"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Cash Dividend.*AAPL"

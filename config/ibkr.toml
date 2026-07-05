@@ -139,7 +139,7 @@ value = "Income:IBKR:Dividend"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "NVDA.*Cash Dividend.*US Tax|VOO.*Cash Dividend.*US Tax|GOOG.*Cash Dividend.*US Tax"
-value = "Expenses:Taxes"
+value = "Taxes:IBKR"
 
 [xsv_to_ledger_record.source_posting.price.exclude]
 [[xsv_to_ledger_record.source_posting.price.exclude.conditions]]

@@ -70,7 +70,7 @@ value = "Expenses:Housing"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "HMRC SELF AS"
-value = "Expenses:Taxes"
+value = "Taxes:HMRC"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Tinkys Day Nursery nursery"
