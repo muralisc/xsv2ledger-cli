@@ -51,7 +51,7 @@ key_regex = """\
 value = "Expenses:Transport"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = "BOOTS|BARBER|OURARING|THRIVA|AG PHYSIOPLUS|VINTAGE SCISSORS|ROYAL FREE HOSPITAL|MEDELA UK"
+key_regex = "BOOTS|BARBER|OURARING|THRIVA|AG PHYSIOPLUS|VINTAGE SCISSORS|ROYAL FREE HOSPITAL|MEDELA UK|MYPROTEIN"
 value = "Expenses:Health"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
@@ -85,6 +85,7 @@ key_regex_list = [
   "EAGERDRINKS",
   "Laduree",
   "VPN",
+  "UNIT 37",
 ]
 value = "Expenses:Utilities"
 
