@@ -16,6 +16,9 @@ cargo run -- --config config/amex.toml --transactions-csv test/test_xsv/amex.csv
 cargo run -- --config config/hsbc.toml --transactions-csv test/test_xsv/hsbc.csv | diff test/expected/hsbc.ledger -
 \ledger b --permissive -f test/expected/hsbc.ledger 2>&1 1>/dev/null | sed "s|$(pwd)/||g" | diff test/expected/hsbc.balance-err -
 
+cargo run -- --config config/ibkr.toml --transactions-csv test/test_xsv/ibkr.csv | diff test/expected/ibkr.ledger -
+\ledger b --permissive -f test/expected/ibkr.ledger | diff test/expected/ibkr.balance -
+
 # --- mapping tests (use isolated test configs, not prod configs) ---
 
 # All transactions have a mapping: full output matches golden file

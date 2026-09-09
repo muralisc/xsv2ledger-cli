@@ -50,12 +50,16 @@ key_regex = "Electronic Fund Transfer|Cash Transfer"
 value = "Assets:Investments:IBKR:Cash"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = "NVDA.*Cash Dividend|VOO.*Cash Dividend|GOOG.*Cash Dividend"
+key_regex = "NVDA.*Cash Dividend|VOO.*Cash Dividend|GOOG.*Cash Dividend|AAPL.*Cash Dividend"
 value = "Assets:Investments:IBKR:Cash:USD"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Buy.*VUAG"
 value = "Assets:Investments:IBKR:VUAG"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Buy.*VUAA"
+value = "Assets:Investments:IBKR:VUAA"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Buy.*VOO"
@@ -85,10 +89,6 @@ hint_columns = [7]
 [xsv_to_ledger_record.target_posting.price.amount.commodity]
 [xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry]
 hint_columns = [6]
-
-[[xsv_to_ledger_record.target_posting.price.amount.commodity.xsv_to_entry.hint_mapping]]
-key_regex = "-"
-value= "USD"
 
 [xsv_to_ledger_record.target_posting.price.cost_amount]
 [xsv_to_ledger_record.target_posting.price.cost_amount.amount]
@@ -126,7 +126,7 @@ key_regex = "Buy.*VUAG"
 value = "Assets:Investments:IBKR:Cash:GBP"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = "Buy.*VOO|Buy.*NVDA"
+key_regex = "Buy.*VOO|Buy.*NVDA|Buy.*VUAA"
 value = "Assets:Investments:IBKR:Cash:USD"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
@@ -134,11 +134,15 @@ key_regex = "USD Credit Interest"
 value = "Income:IBKR:Interest"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = "NVDA.*Cash Dividend.*Ordinary Dividend|VOO.*Cash Dividend.*Ordinary Dividend|GOOG.*Cash Dividend.*Ordinary Dividend"
+key_regex = "FX Translations"
+value = "Income:IBKR:FX"
+
+[[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "NVDA.*Cash Dividend.*Ordinary Dividend|VOO.*Cash Dividend.*Ordinary Dividend|GOOG.*Cash Dividend.*Ordinary Dividend|AAPL.*Cash Dividend.*Ordinary Dividend"
 value = "Income:IBKR:Dividend"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = "NVDA.*Cash Dividend.*US Tax|VOO.*Cash Dividend.*US Tax|GOOG.*Cash Dividend.*US Tax"
+key_regex = "NVDA.*Cash Dividend.*US Tax|VOO.*Cash Dividend.*US Tax|GOOG.*Cash Dividend.*US Tax|AAPL.*Cash Dividend.*US Tax"
 value = "Taxes:IBKR"
 
 [xsv_to_ledger_record.source_posting.price.exclude]

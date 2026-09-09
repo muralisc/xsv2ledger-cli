@@ -1,0 +1,35 @@
+             GBP-196
+           10.0 NVDA
+       -12058.84 USD
+             5.0 VOO
+           50.0 VUAA
+            2.0 VUAG  Assets
+             GBP-196
+           10.0 NVDA
+        -6058.84 USD
+             5.0 VOO
+           50.0 VUAA
+            2.0 VUAG    Investments:IBKR
+             GBP-196
+        -6058.84 USD      Cash
+             GBP-196        GBP
+       -12058.84 USD        USD
+           10.0 NVDA      NVDA
+             5.0 VOO      VOO
+           50.0 VUAA      VUAA
+            2.0 VUAG      VUAG
+        -6000.00 USD    WireTransfer
+        -1000.00 USD      MONZO_IBKR
+        -5000.00 USD      SCHWAB_IBKR
+          -43.00 USD  Income:IBKR
+           12.25 USD    Dividend
+           -5.25 USD    FX
+          -50.00 USD    Interest
+            1.84 USD  Taxes:IBKR
+--------------------
+             GBP-196
+           10.0 NVDA
+       -12100.00 USD
+             5.0 VOO
+           50.0 VUAA
+            2.0 VUAG

@@ -1,0 +1,50 @@
+; vim:ft=ledger
+; vim:set tw=200
+2026-01-02 * "Electronic Fund Transfer | Deposit | -"
+        Assets:Investments:IBKR:Cash        
+        Assets:WireTransfer:MONZO_IBKR        -1000.0 USD
+
+2026-01-03 * "Cash Transfer | Deposit | -"
+        Assets:Investments:IBKR:Cash        
+        Assets:WireTransfer:SCHWAB_IBKR        -5000.0 USD
+
+2026-01-04 * "FX Translations P&L | Adjustment | -"
+        Assets:Investments:IBKR:Cash:USD        
+        Income:IBKR:FX        -5.25 USD
+
+2026-01-05 * "VANG S&P500 USDA | Buy | VUAG"
+        Assets:Investments:IBKR:VUAG        2.0 VUAG @ 98.25 GBP
+        Assets:Investments:IBKR:Cash:GBP        
+
+2026-01-06 * "VANGUARD S&P 500 ETF | Buy | VOO"
+        Assets:Investments:IBKR:VOO        5.0 VOO @ 600.0 USD
+        Assets:Investments:IBKR:Cash:USD        
+
+2026-01-07 * "NVIDIA CORP | Buy | NVDA"
+        Assets:Investments:IBKR:NVDA        10.0 NVDA @ 180.0 USD
+        Assets:Investments:IBKR:Cash:USD        
+
+2026-01-08 * "VANG S&P500 USDA | Buy | VUAA"
+        Assets:Investments:IBKR:VUAA        50.0 VUAA @ 146.0 USD
+        Assets:Investments:IBKR:Cash:USD        
+
+2026-01-09 * "USD Credit Interest for Dec-2025 | Credit Interest | -"
+        Assets:Investments:IBKR:Cash:USD        
+        Income:IBKR:Interest        -50.0 USD
+
+2026-01-10 * "NVDA(US67066G1040) Cash Dividend USD 0.01 per Share (Ordinary Dividend) | Dividend | NVDA"
+        Assets:Investments:IBKR:Cash:USD        
+        Income:IBKR:Dividend        0.1 USD
+
+2026-01-10 * "NVDA(US67066G1040) Cash Dividend USD 0.01 per Share - US Tax | Foreign Tax Withholding | NVDA"
+        Assets:Investments:IBKR:Cash:USD        
+        Taxes:IBKR        0.02 USD
+
+2026-01-14 * "AAPL(US0378331005) Cash Dividend USD 0.27 per Share (Ordinary Dividend) | Dividend | AAPL"
+        Assets:Investments:IBKR:Cash:USD        
+        Income:IBKR:Dividend        12.15 USD
+
+2026-01-14 * "AAPL(US0378331005) Cash Dividend USD 0.27 per Share - US Tax | Foreign Tax Withholding | AAPL"
+        Assets:Investments:IBKR:Cash:USD        
+        Taxes:IBKR        1.82 USD
+

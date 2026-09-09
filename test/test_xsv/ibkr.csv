@@ -1,0 +1,22 @@
+Statement,Header,Field Name,Field Value
+Statement,Data,Title,Transaction History
+Statement,Data,Period,"January 1, 2026 - February 1, 2026"
+Statement,Data,WhenGenerated,"2026-02-01, 08:00:00 EST"
+Summary,Header,Field Name,Field Value
+Summary,Data,Base Currency,USD
+Summary,Data,Starting Cash,0.0
+Summary,Data,Change,1000.0
+Summary,Data,Ending Cash,1000.0
+Transaction History,Header,Date,Account,Description,Transaction Type,Symbol,Quantity,Price,Price Currency,Gross Amount ,Commission,Net Amount,Exchange Rate,Transaction Fees
+Transaction History,Data,2026-01-02,U***00001,Electronic Fund Transfer,Deposit,-,-,-,-,1000.0,-,1000.0,1.0,-
+Transaction History,Data,2026-01-03,U***00001,Cash Transfer,Deposit,-,-,-,-,5000.0,-,5000.0,1.0,-
+Transaction History,Data,2026-01-04,U***00001,FX Translations P&L,Adjustment,-,-,-,-,-5.25,-,-5.25,1.0,-
+Transaction History,Data,2026-01-05,U***00001,VANG S&P500 USDA,Buy,VUAG,2.0,98.25,GBP,-196.5,-4.0,-200.5,1.0,-
+Transaction History,Data,2026-01-06,U***00001,VANGUARD S&P 500 ETF,Buy,VOO,5.0,600.0,USD,-3000.0,-1.0,-3001.0,1.0,-
+Transaction History,Data,2026-01-07,U***00001,NVIDIA CORP,Buy,NVDA,10.0,180.0,USD,-1800.0,-1.0,-1801.0,1.0,-
+Transaction History,Data,2026-01-08,U***00001,VANG S&P500 USDA,Buy,VUAA,50.0,146.0,USD,-7300.0,-4.0,-7304.0,1.0,-
+Transaction History,Data,2026-01-09,U***00001,USD Credit Interest for Dec-2025,Credit Interest,-,-,-,-,50.0,-,50.0,1.0,-
+Transaction History,Data,2026-01-10,U***00001,NVDA(US67066G1040) Cash Dividend USD 0.01 per Share (Ordinary Dividend),Dividend,NVDA,-,-,-,0.1,-,0.1,1.0,-
+Transaction History,Data,2026-01-10,U***00001,NVDA(US67066G1040) Cash Dividend USD 0.01 per Share - US Tax,Foreign Tax Withholding,NVDA,-,-,-,-0.02,-,-0.02,1.0,-
+Transaction History,Data,2026-01-14,U***00001,AAPL(US0378331005) Cash Dividend USD 0.27 per Share (Ordinary Dividend),Dividend,AAPL,-,-,-,12.15,-,12.15,1.0,-
+Transaction History,Data,2026-01-14,U***00001,AAPL(US0378331005) Cash Dividend USD 0.27 per Share - US Tax,Foreign Tax Withholding,AAPL,-,-,-,-1.82,-,-1.82,1.0,-

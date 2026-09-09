@@ -83,3 +83,7 @@ RUST_BACKTRACE=1 cargo run -- \
     --config ~/src/bank2ledger-cli/config/sbi.toml \
     --transactions-csv ~/shared_folders/transfer_work/sbi-12dec.xls > ledger_2023_12Dec_sbi.txt
 ```
+
+## IBKR - Interactive Broekers
+
+Performance & Reports Tab > Transaction History
