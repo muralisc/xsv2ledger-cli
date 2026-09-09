@@ -34,7 +34,7 @@
 
 2026-01-10 * "NVDA(US67066G1040) Cash Dividend USD 0.01 per Share (Ordinary Dividend) | Dividend | NVDA"
         Assets:Investments:IBKR:Cash:USD        
-        Income:IBKR:Dividend        0.1 USD
+        Income:IBKR:Dividend        -0.1 USD
 
 2026-01-10 * "NVDA(US67066G1040) Cash Dividend USD 0.01 per Share - US Tax | Foreign Tax Withholding | NVDA"
         Assets:Investments:IBKR:Cash:USD        
@@ -42,7 +42,7 @@
 
 2026-01-14 * "AAPL(US0378331005) Cash Dividend USD 0.27 per Share (Ordinary Dividend) | Dividend | AAPL"
         Assets:Investments:IBKR:Cash:USD        
-        Income:IBKR:Dividend        12.15 USD
+        Income:IBKR:Dividend        -12.15 USD
 
 2026-01-14 * "AAPL(US0378331005) Cash Dividend USD 0.27 per Share - US Tax | Foreign Tax Withholding | AAPL"
         Assets:Investments:IBKR:Cash:USD        
