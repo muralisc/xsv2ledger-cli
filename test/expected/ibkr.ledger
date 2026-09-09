@@ -1,11 +1,11 @@
 ; vim:ft=ledger
 ; vim:set tw=200
 2026-01-02 * "Electronic Fund Transfer | Deposit | -"
-        Assets:Investments:IBKR:Cash        
+        Assets:Investments:IBKR:Cash:USD        
         Assets:WireTransfer:MONZO_IBKR        -1000.0 USD
 
 2026-01-03 * "Cash Transfer | Deposit | -"
-        Assets:Investments:IBKR:Cash        
+        Assets:Investments:IBKR:Cash:USD        
         Assets:WireTransfer:SCHWAB_IBKR        -5000.0 USD
 
 2026-01-04 * "FX Translations P&L | Adjustment | -"
