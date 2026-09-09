@@ -86,7 +86,6 @@ key_regex_list = [
   "EAGERDRINKS",
   "Laduree",
   "VPN",
-  "UNIT 37",
 ]
 value = "Expenses:Utilities"
 
