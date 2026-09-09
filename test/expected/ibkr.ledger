@@ -10,7 +10,7 @@
 
 2026-01-04 * "FX Translations P&L | Adjustment | -"
         Assets:Investments:IBKR:Cash:USD        
-        Income:IBKR:FX        -5.25 USD
+        Income:IBKR:FX        5.25 USD
 
 2026-01-05 * "VANG S&P500 USDA | Buy | VUAG"
         Assets:Investments:IBKR:VUAG        2.0 VUAG @ 98.25 GBP

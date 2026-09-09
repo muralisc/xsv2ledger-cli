@@ -179,6 +179,12 @@ column = 5              # IBKR:Quantity
 value = "Foreign Tax Withholding"
 operation = "equal"
 
+[[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions]]
+type = "ColumnContainsValue"
+[xsv_to_ledger_record.source_posting.price.amount.quantity.invert_sign.conditions.content]
+column = 4              # IBKR:Description
+value = "FX Translations"
+operation = "contains"
 
 [xsv_to_ledger_record.source_posting.price.amount.commodity]
 [xsv_to_ledger_record.source_posting.price.amount.commodity.xsv_to_entry]
