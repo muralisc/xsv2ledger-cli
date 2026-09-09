@@ -28,6 +28,10 @@
         Assets:Investments:IBKR:VUAA        50.0 VUAA @ 146.0 USD
         Assets:Investments:IBKR:Cash:USD        
 
+2026-01-08 * "SPACE EXPLORATION TECHN-CL A | Buy | SPCX"
+        Assets:Investments:IBKR:SPCX        10.0 SPCX @ 188.0 USD
+        Assets:Investments:IBKR:Cash:USD        
+
 2026-01-09 * "USD Credit Interest for Dec-2025 | Credit Interest | -"
         Assets:Investments:IBKR:Cash:USD        
         Income:IBKR:Interest        -50.0 USD

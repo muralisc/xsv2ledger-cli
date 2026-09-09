@@ -62,6 +62,10 @@ key_regex = "Buy.*VUAA"
 value = "Assets:Investments:IBKR:VUAA"
 
 [[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
+key_regex = "Buy.*SPCX"
+value = "Assets:Investments:IBKR:SPCX"
+
+[[xsv_to_ledger_record.target_posting.account.xsv_to_entry.hint_mapping]]
 key_regex = "Buy.*VOO"
 value = "Assets:Investments:IBKR:VOO"
 
@@ -126,7 +130,7 @@ key_regex = "Buy.*VUAG"
 value = "Assets:Investments:IBKR:Cash:GBP"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
-key_regex = "Buy.*VOO|Buy.*NVDA|Buy.*VUAA"
+key_regex = "Buy.*VOO|Buy.*NVDA|Buy.*VUAA|Buy.*SPCX"
 value = "Assets:Investments:IBKR:Cash:USD"
 
 [[xsv_to_ledger_record.source_posting.account.xsv_to_entry.hint_mapping]]
